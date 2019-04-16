@@ -10,6 +10,30 @@ frameworks in the market.
 ## The target application: OpenEvents
 Final App definition / Features in this Openathon
 
+* Landing page: Intro and description. Shortcuts.
+* Menu
+  * Home
+  * Events 
+    * See events
+      * List (with filters as popular, last, location…)
+      * Calendar
+      * Event page selected with details 
+    * Find events (filters) 
+    * Create event (with categories) 
+    * Delete event 
+    * Edit event 
+    * Your events (as organizer) 
+  * Login-Register 
+    * Register page 
+    * Login page 
+  * Profile 
+    * See profile 
+    * Edit profile 
+    * Delete profile
+
+For this Openathon with limited backend (mockups)
+
+
 
 ## What we are going to do
 
