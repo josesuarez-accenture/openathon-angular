@@ -40,9 +40,10 @@ Meanwhile, **Facebook** released **React** in 2013 and **Vue** was released late
 <p align="center">
     <img src="./resources/competitors.png" width="620">
 </p>
+
 > Some comparisons in [Medium](https://medium.com):
-> - [React vs Angular vs Vue.js — What to choose in 2019?](https://medium.com/@TechMagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)
-> - [React vs Angular vs Vue.js: A Complete Comparison Guide](https://medium.com/front-end-weekly/react-vs-angular-vs-vue-js-a-complete-comparison-guide-d16faa185d61)
+- [React vs Angular vs Vue.js — What to choose in 2019?](https://medium.com/@TechMagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)
+- [React vs Angular vs Vue.js: A Complete Comparison Guide](https://medium.com/front-end-weekly/react-vs-angular-vs-vue-js-a-complete-comparison-guide-d16faa185d61)
 
 
 Angular was still dominant but *Google Angular Team* itself decided to release a breaking version in 2016: **Angular 2**.
@@ -52,7 +53,7 @@ That was the debacle for Angular, with a new framework not compatible with previ
 
 Nowadays Angular has been slowly recovering but it’s still very far from React.
 <p align="center">
-    <img src="./resources/angular_npmtrend.png" width="420">
+    <img src="./resources/angular_npmtrend.png" width="720">
 </p>
 
 [See npm trends](https://www.npmtrends.com/react-vs-@angular/core-vs-vue) for more information
@@ -71,7 +72,9 @@ Nowadays Angular has been slowly recovering but it’s still very far from React
 # Angular Technologies 
 Angular is packed together with a set of robust technologies and libraries for testing like **karma**, **protractor**, **jasmine**, **protractor** and **istambul**, together with code quality tools or linter like **TSLint** or module bundlers like **webpack** among others.
 
-![Angular Ecosystem ](./angular_ecosystem.png)
+<p align="center">
+    <img src="./resources/angular_ecosystem.png" width="720">
+</p>
 
 ## Angular Languages
 Angular is available in two flavours: 
@@ -111,11 +114,12 @@ What generally happens is that the SPA framework (Angular, for example) intercep
 ## Dependency Injection
 **[Dependency Injection (DI)](https://angular.io/guide/dependency-injection)** is an application design pattern where users don't need to create instances by thenselves. *Is a way to create objects that depend on other objects*. A A DI system (Angular DI, for example) supplies the dependent objects (called the dependencies) when it creates an instance of an object .
 
-![Boring](/resources/boring1.png)
+![Boring](./resources/boring1.png)
 ## Modules
 **NgModules** are the basic building blocks of an Angular application, which provide a compilation context for **Components** and **Services**.
-![Ng Modules](./resources/ngmodule.png)
-
+<p align="center">
+    <img src="./resources/ngmodule.png" width="420">
+</p>
 
 * **Services** provide specific functionality for data or logic not directly related to views. 
 
@@ -124,14 +128,18 @@ What generally happens is that the SPA framework (Angular, for example) intercep
 **[Components](https://angular.io/guide/architecture-components)** are the fundamental building blocks of Angular applications. They display data on the screen, listen for user input, and take action based on that input. 
 
 **Components** defines a class that contains application data and logic, and is associated with an HTML template that defines a view or view hierarchy. This hierarchy allows the definition of arbitrarily complex areas of the screen that can be created, modified, and destroyed as a unit.
-![Component](./resources/component_template.png)
+<p align="center">
+    <img src="./resources/component_template.png">
+</p>
 
 ## Services 
 **[Services](https://angular.io/guide/architecture-services)** encapsulates non-UI logic and code that can be reused across an application. Angular distinguishes components from services to increase modularity and reusability. 
 
 **Services** can be reused and injected into components as dependencies, making code modular, reusable, and efficient.
 
-![Services](./resources/services_components.png)
+<p align="center">
+    <img src="./resources/services_components.png" width="720">
+</p>
 
 # Resources
 
@@ -152,7 +160,7 @@ https://angular-university.io
 <p align="center">
     <img src="./resources/you_are_expert.png" width="420">
 </p>
-![Road](./resoroad.png)
+    <img src="./resources/road.png">
 
 
 
