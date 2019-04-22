@@ -103,4 +103,4 @@ This edition of the Openathon is divided in the following labs:
 
     [Click here](https://augury.rangle.io/) to download and install.
 
-[Next >](labs/lab-0)
+[Lab 0. What is Angular >](lab-0)
