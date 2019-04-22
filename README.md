@@ -106,4 +106,5 @@ This edition of the Openathon is divided in the following labs:
 <br/>
 <br/>
 <br/>
-[Lab 0. What is Angular >](lab-0)
+
+[Lab 0. What is Angular](./lab-0)
