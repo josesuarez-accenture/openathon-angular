@@ -2,22 +2,25 @@
 
 ## Table of Contents
 * [Angular. A Framework for Mobile and Desktop](#Angular.-A-Framework-for-Mobile-and-Desktop)
+  * [Some History](##Some-History)
+  * [Angular Facts](##Angular-Facts)
+* [Angular Technologies](##Angular-Technologies)
+  * [Angular Languages](##Angular-Languages)
+    * [TypeScript](###TypeScript)
+    * [Dart](###Dart)
 * [Angular Architecture](#Angular-Architecture)
+  * [SPAs](##SPAs)
+  * [Dependency Injection](##Dependency-Injection)
+  * [Modules](##Modules)
+  * [Components](##Components)
+  * [Services](##Services)
 * [Resources](#resources)
 
-
-Brief definition of main elements and their relations. Explain the relation between UI elements and Angular components to build the app.
-
-
-* Resources
-Links to the official documentation, free books, free starter kits...
 <p align="center">
     <img src="./resources/Angular_full_color_logo.svg.png" width="320">
 </p>
 
 # Angular. A Framework for Mobile and Desktop
- Definition and SPAs / Versions difference / Programming language used
-
 
 **Angular** is a very popular framework focused on the creation of **SPAs** based heavily on its own **Dependency Injection Framework**, Angular two main pillars: **Components** and **Services**, and **TypeScript**.
 
@@ -100,6 +103,7 @@ Dart is an object-oriented, class defined, garbage-collected language using a C-
 
 
 
+
 # Angular Architecture
 In order to truly understand Angular we need to previously understand it's main concepts.
 But, firstly, have a break!
@@ -141,8 +145,10 @@ What generally happens is that the SPA framework (Angular, for example) intercep
     <img src="./resources/services_components.png" width="720">
 </p>
 
-# Resources
 
+
+# Resources
+Links to the official documentation, free books, free starter kits...
 ## You Don't Know JS (book series)
 
 This is a series of books diving deep into the core mechanisms of the
@@ -155,20 +161,16 @@ JavaScript language.  The first edition of the series is now complete.
 <a href="http://www.ebooks.com/1977375/you-don-t-know-js-async-performance/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/001/001977/001977375/001977375-hq-168-80.jpg" width="75"></a>&nbsp;
 <a href="http://www.ebooks.com/2481820/you-don-t-know-js-es6-beyond/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/002/002481/002481820/002481820-hq-168-80.jpg" width="75"></a>
 
-https://angular-university.io
+[Angular University](https://angular-university.io) to learn more...
 
 <p align="center">
-    <img src="./resources/you_are_expert.png" width="420">
+    <img src="./resources/you_are_expert.png" width="220">
 </p>
     <img src="./resources/road.png">
 
+<br/>
+<br/>
+<br/>
 
 
-
-
-
-
-
-
-
-[< Home Page](../..) | [Next >](../lab-01)
+[< Home Page](../..) | [Next >](../lab-1)
