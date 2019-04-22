@@ -11,8 +11,9 @@ Brief definition of main elements and their relations. Explain the relation betw
 
 * Resources
 Links to the official documentation, free books, free starter kits...
-
-![Angular logo](resources/Angular_full_color_logo.png | width=375)
+<p align="center">
+    <img src="./resources/Angular_full_color_logo.svg.png" width="320">
+</p>
 
 # Angular. A Framework for Mobile and Desktop
  Definition and SPAs / Versions difference / Programming language used
@@ -36,9 +37,9 @@ Angular was very popular for:
 But because of its popularity and older JavaScript versions in that time, developers were starting to run into severe performance problems when they tried to bind too many model objects to too many DOM elements.
 
 Meanwhile, **Facebook** released **React** in 2013 and **Vue** was released later by a single developer, **Evan You**, in 2014.
-
-![Angular Competitors ](competitors.png)
-
+<p align="center">
+    <img src="./resources/competitors.png" width="620">
+</p>
 > Some comparisons in [Medium](https://medium.com):
 > - [React vs Angular vs Vue.js — What to choose in 2019?](https://medium.com/@TechMagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)
 > - [React vs Angular vs Vue.js: A Complete Comparison Guide](https://medium.com/front-end-weekly/react-vs-angular-vs-vue-js-a-complete-comparison-guide-d16faa185d61)
@@ -50,15 +51,9 @@ That was the debacle for Angular, with a new framework not compatible with previ
 > This situation gave a lot of Angular developers reasons to try another options. Also, to complicate it more, Angular 1.x was renamed to **Angular.JS** while Angular 2 kept **Angular**.
 
 Nowadays Angular has been slowly recovering but it’s still very far from React.
-
-![Angular Trends](resources/angular_npmtrend.png | width=100)
- <img src="https://github.com/your_image.png" width="250"/>
-<a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/compodoc/backers/badge.svg" /></a> <a href="#sponsors" alt="Sponsors on Open Collective"><img src="https://opencollective.com/compodoc/sponsors/badge.svg" /></a>
-</p>
 <p align="center">
-    <img src="https://saucelabs.com/browser-matrix/compodoc.svg" alt="saucelabs badge"/>
+    <img src="./resources/angular_npmtrend.png" width="420">
 </p>
-
 
 [See npm trends](https://www.npmtrends.com/react-vs-@angular/core-vs-vue) for more information
 
@@ -71,12 +66,12 @@ Nowadays Angular has been slowly recovering but it’s still very far from React
 * It’s **NOT** Java!!! HHRR people, please, stop sending Frontend positions as "Java CVs" **;)**
 
 
-![JavaArggg](resources/javaA.png)
+![JavaArggg](./resources/javaA.png)
 
 # Angular Technologies 
 Angular is packed together with a set of robust technologies and libraries for testing like **karma**, **protractor**, **jasmine**, **protractor** and **istambul**, together with code quality tools or linter like **TSLint** or module bundlers like **webpack** among others.
 
-![Angular Ecosystem ](angular_ecosystem.png)
+![Angular Ecosystem ](./angular_ecosystem.png)
 
 ## Angular Languages
 Angular is available in two flavours: 
@@ -84,7 +79,7 @@ Angular is available in two flavours:
 * [Dart]( https://www.dartlang.org/)
 
 ### TypeScript
-![Ts](ts.png)
+<img src="./resources/ts.png" width="220">
 **[TypeScript](https://github.com/Microsoft/TypeScript)** is a typed superset of **JavaScript** that compiles directly to JavaScript code. It was created by Microsoft as a way for **C#** and **Java** developers to easily move to JavaScript world with a more powerful and type language.
 
 TypeScript makes JavaScript more like a **strongly-typed, object-oriented language** easier to debug and maintain, two of the weakest points of standard JavaScript.
@@ -92,7 +87,7 @@ TypeScript makes JavaScript more like a **strongly-typed, object-oriented langua
 [TypeScript Notes for Professionals](https://goalkicker.com/TypeScriptBook2/) book
 
 ### Dart
-![Dart](dart.png)
+<img src="./resources/dart.png" width="220">
 Dart is an object-oriented, class defined, garbage-collected language using a C-style syntax that transcompiles optionally into JavaScript. It supports interfaces, mixins, abstract classes, reified generics, static typing, and a sound type system.
 
 [See Angular Dart](https://webdev.dartlang.org/angular) for more information.
@@ -106,7 +101,7 @@ Dart is an object-oriented, class defined, garbage-collected language using a C-
 In order to truly understand Angular we need to previously understand it's main concepts.
 But, firstly, have a break!
 
-![Rest now](comeback.png)
+![Rest now](./resources/comeback.png)
 
 ## SPAs
 A **[Single-Page Application](https://blog.angular-university.io/why-a-single-page-application-what-are-the-benefits-what-is-a-spa/)** is a web app **compiled to JavaScript** that dynamically renders sections of a page *without requiring a full reload from a server*.
@@ -116,10 +111,10 @@ What generally happens is that the SPA framework (Angular, for example) intercep
 ## Dependency Injection
 **[Dependency Injection (DI)](https://angular.io/guide/dependency-injection)** is an application design pattern where users don't need to create instances by thenselves. *Is a way to create objects that depend on other objects*. A A DI system (Angular DI, for example) supplies the dependent objects (called the dependencies) when it creates an instance of an object .
 
-![Boring](boring1.png)
+![Boring](/resources/boring1.png)
 ## Modules
 **NgModules** are the basic building blocks of an Angular application, which provide a compilation context for **Components** and **Services**.
-![Ng Modules](ngmodule.png)
+![Ng Modules](./resources/ngmodule.png)
 
 
 * **Services** provide specific functionality for data or logic not directly related to views. 
@@ -129,17 +124,15 @@ What generally happens is that the SPA framework (Angular, for example) intercep
 **[Components](https://angular.io/guide/architecture-components)** are the fundamental building blocks of Angular applications. They display data on the screen, listen for user input, and take action based on that input. 
 
 **Components** defines a class that contains application data and logic, and is associated with an HTML template that defines a view or view hierarchy. This hierarchy allows the definition of arbitrarily complex areas of the screen that can be created, modified, and destroyed as a unit.
-![Component](component_template.png)
+![Component](./resources/component_template.png)
 
 ## Services 
 **[Services](https://angular.io/guide/architecture-services)** encapsulates non-UI logic and code that can be reused across an application. Angular distinguishes components from services to increase modularity and reusability. 
 
 **Services** can be reused and injected into components as dependencies, making code modular, reusable, and efficient.
 
-![Services](services_components.png)
+![Services](./resources/services_components.png)
 
-
-![Boring again](boring2.png)
 # Resources
 
 ## You Don't Know JS (book series)
@@ -156,9 +149,10 @@ JavaScript language.  The first edition of the series is now complete.
 
 https://angular-university.io
 
-
-![Expert](you_are_expert.png)
-![Road](road.png)
+<p align="center">
+    <img src="./resources/you_are_expert.png" width="420">
+</p>
+![Road](./resoroad.png)
 
 
 
