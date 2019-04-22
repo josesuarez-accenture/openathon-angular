@@ -173,4 +173,4 @@ JavaScript language.  The first edition of the series is now complete.
 <br/>
 
 
-[< Home Page](/) | [Next >](../lab-1)
+[< Home Page](../) | [Next >](../lab-1)
