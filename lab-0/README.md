@@ -1,214 +1,148 @@
 # Lab 0 - What is Angular
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/800px-Angular_full_color_logo.svg.png" width="475"></a>&nbsp;
-
-
 ## Table of Contents
-* [Angular. A Framework for Mobile and Desktop](#react.-a-javascript-library-for-building-user-interfaces)
-* [What is JavaScript](#what-is-javascript)
-* [React. A JavaScript library for building user interfaces](#react.-a-javascript-library-for-building-user-interfaces)
+* [Angular. A Framework for Mobile and Desktop](#Angular.-A-Framework-for-Mobile-and-Desktop)
+* [Angular Architecture](#Angular-Architecture)
 * [Resources](#resources)
 
 
-* Introduction to Angular
-* Definition and SPAs / Versions difference / Programming language used
-* Javascript (similar to react)
-* Typescript 
-Definition / Most used features in Angular
-When convenient throughout all labs, introduce a side note (perhaps in a box) explaining a component from Typescript.
+Brief definition of main elements and their relations. Explain the relation between UI elements and Angular components to build the app.
+
 
 * Resources
 Links to the official documentation, free books, free starter kits...
 
-* Angular Architecture (from official Angular docs)
-Overview / Modules / Components / Templates, directives and data binding / Services and dependency injection / Routing
- 
-Brief definition of main elements and their relations. Explain the relation between UI elements and Angular components to build the app.
+![Angular logo](resources/Angular_full_color_logo.png | width=375)
 
-![JavaArggg](javaA.png)
+# Angular. A Framework for Mobile and Desktop
+ Definition and SPAs / Versions difference / Programming language used
 
-### Angular Facts
+
+**Angular** is a very popular framework focused on the creation of **SPAs** based heavily on its own **Dependency Injection Framework**, Angular two main pillars: **Components** and **Services**, and **TypeScript**.
+
+The official Angular site states:
+
+> "Angular is a platform that makes it easy to build applications with the web. Angular combines **declarative templates**, **dependency injection**, **end to end tooling**, and **integrated best practices** to solve development challenges. Angular empowers developers to build applications that live on the web, mobile, or the desktop".
+
+## Some History 
+**Angular** was created by **Google** in 2010 taking the Frontend development world by storm having an easy-to-use JavaScript framework that treated HTML as a first-class citizen. 
+
+Angular was very popular for:
+* Easy **binding** of data to HTML elements.
+* **Directives** providing an easy way to create reusable HTML + CSS components. 
+* **Client-side reusable components** very popular in server-side.
+*  **Dependency injection** also popular in enterprise applications.
+
+But because of its popularity and older JavaScript versions in that time, developers were starting to run into severe performance problems when they tried to bind too many model objects to too many DOM elements.
+
+Meanwhile, **Facebook** released **React** in 2013 and **Vue** was released later by a single developer, **Evan You**, in 2014.
+
+![Angular Competitors ](competitors.png)
+
+> Some comparisons in [Medium](https://medium.com):
+> - [React vs Angular vs Vue.js — What to choose in 2019?](https://medium.com/@TechMagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)
+> - [React vs Angular vs Vue.js: A Complete Comparison Guide](https://medium.com/front-end-weekly/react-vs-angular-vs-vue-js-a-complete-comparison-guide-d16faa185d61)
+
+
+Angular was still dominant but *Google Angular Team* itself decided to release a breaking version in 2016: **Angular 2**.
+
+That was the debacle for Angular, with a new framework not compatible with previous versions, two new languages not clear which could be the official one during Angular alpha and beta stages… 
+> This situation gave a lot of Angular developers reasons to try another options. Also, to complicate it more, Angular 1.x was renamed to **Angular.JS** while Angular 2 kept **Angular**.
+
+Nowadays Angular has been slowly recovering but it’s still very far from React.
+
+![Angular Trends](resources/angular_npmtrend.png | width=100)
+ <img src="https://github.com/your_image.png" width="250"/>
+<a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/compodoc/backers/badge.svg" /></a> <a href="#sponsors" alt="Sponsors on Open Collective"><img src="https://opencollective.com/compodoc/sponsors/badge.svg" /></a>
+</p>
+<p align="center">
+    <img src="https://saucelabs.com/browser-matrix/compodoc.svg" alt="saucelabs badge"/>
+</p>
+
+
+[See npm trends](https://www.npmtrends.com/react-vs-@angular/core-vs-vue) for more information
+
+## Angular Facts
 * It’s NEITHER **Java** nor **Angular.js**!!!
 * It’s a **Framework**. Suck that **React**!
 * **JavaScript** is dead. Long life **TypeScript**! :+1:
-* It’s **NOT** Java.
+* It’s **NOT** Java...
 * ~~MVC~~, is **MVVM** = Model–View–ViewModel.
-* It’s **NOT** Java.
+* It’s **NOT** Java!!! HHRR people, please, stop sending Frontend positions as "Java CVs" **;)**
 
 
+![JavaArggg](resources/javaA.png)
 
-### Angular Ecosystem
+# Angular Technologies 
+Angular is packed together with a set of robust technologies and libraries for testing like **karma**, **protractor**, **jasmine**, **protractor** and **istambul**, together with code quality tools or linter like **TSLint** or module bundlers like **webpack** among others.
+
 ![Angular Ecosystem ](angular_ecosystem.png)
 
+## Angular Languages
+Angular is available in two flavours: 
+* [TypeScript](https://github.com/Microsoft/TypeScript) 
+* [Dart]( https://www.dartlang.org/)
 
-### Trends in npm
-![Angular Trends](angular_npmtrend.png)
- 
-[See npm trends](https://www.npmtrends.com/react-vs-@angular/core-vs-vue) for more information
+### TypeScript
+![Ts](ts.png)
+**[TypeScript](https://github.com/Microsoft/TypeScript)** is a typed superset of **JavaScript** that compiles directly to JavaScript code. It was created by Microsoft as a way for **C#** and **Java** developers to easily move to JavaScript world with a more powerful and type language.
+
+TypeScript makes JavaScript more like a **strongly-typed, object-oriented language** easier to debug and maintain, two of the weakest points of standard JavaScript.
+
+[TypeScript Notes for Professionals](https://goalkicker.com/TypeScriptBook2/) book
+
+### Dart
+![Dart](dart.png)
+Dart is an object-oriented, class defined, garbage-collected language using a C-style syntax that transcompiles optionally into JavaScript. It supports interfaces, mixins, abstract classes, reified generics, static typing, and a sound type system.
+
+[See Angular Dart](https://webdev.dartlang.org/angular) for more information.
+
+
+>> **Notice that we will focus only on TypeScript in this Openathon**
 
 
 
+# Angular Architecture
+In order to truly understand Angular we need to previously understand it's main concepts.
+But, firstly, have a break!
 
-## Angular Pillars
+![Rest now](comeback.png)
 
-### Modules
-**NgModules** are the basic building blocks of an Angular application, which provide a compilation context for Components and Services.
+## SPAs
+A **[Single-Page Application](https://blog.angular-university.io/why-a-single-page-application-what-are-the-benefits-what-is-a-spa/)** is a web app **compiled to JavaScript** that dynamically renders sections of a page *without requiring a full reload from a server*.
+
+What generally happens is that the SPA framework (Angular, for example) intercepts the browser events and instead of making a new request to the server (a new document/page), requests some JSON or performs an action on the server but the page that the user sees is never completely wiped away, and behaves more like a desktop application.
+
+## Dependency Injection
+**[Dependency Injection (DI)](https://angular.io/guide/dependency-injection)** is an application design pattern where users don't need to create instances by thenselves. *Is a way to create objects that depend on other objects*. A A DI system (Angular DI, for example) supplies the dependent objects (called the dependencies) when it creates an instance of an object .
+
+![Boring](boring1.png)
+## Modules
+**NgModules** are the basic building blocks of an Angular application, which provide a compilation context for **Components** and **Services**.
 ![Ng Modules](ngmodule.png)
 
-* **Components** defines a class that contains application data and logic, and is associated with an HTML template that defines a View.
 
 * **Services** provide specific functionality for data or logic not directly related to views. 
 
 
+## Components
+**[Components](https://angular.io/guide/architecture-components)** are the fundamental building blocks of Angular applications. They display data on the screen, listen for user input, and take action based on that input. 
 
-**Components** and its Template together define a view or view hierarchy, which allows the definition of arbitrarily complex areas of the screen that can be created, modified, and destroyed as a unit.
+**Components** defines a class that contains application data and logic, and is associated with an HTML template that defines a view or view hierarchy. This hierarchy allows the definition of arbitrarily complex areas of the screen that can be created, modified, and destroyed as a unit.
 ![Component](component_template.png)
+
+## Services 
+**[Services](https://angular.io/guide/architecture-services)** encapsulates non-UI logic and code that can be reused across an application. Angular distinguishes components from services to increase modularity and reusability. 
 
 **Services** can be reused and injected into components as dependencies, making code modular, reusable, and efficient.
 
 ![Services](services_components.png)
 
 
-
-
-
-![Rest now](comeback.png)
-
-
-
-## What is TypeScript
-![Ts](ts.png)
-It's the best!
-
-
-
-![Boring](boring1.png)
-## What is JavaScript
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="175"></a>&nbsp;
-
-**JavaScript** is one of the most important **programming languages**
-of all time, not simply because of its
-[popularity](https://www.tiobe.com/tiobe-index), but also because of
-its features.  JavaScript is a multi-paradigm language, supporting
-**imperative/procedural** programming along with **OOP**
-(Object-Oriented Programming) with **prototypal inheritance**
-and **functional programming**.
-
-It's based on and conforms to **ECMAScript**
-[specification](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf),
-whose latest version is **ECMAScript 2018**.
-
-JavaScript is an **interpreted language** that needs a **JavaScript
-Engine** to be executed.  There are different engines and each offers
-a different level of compatibility with the different ECMAScript
-specifications allowing them to support a certain subset of the
-JavaScript language:
-
-* [V8](https://developers.google.com/v8/) in Chrome browser and
-  Node.js server.
-
-* [SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-  in Firefox browser.
-
-* [Chakra](https://github.com/Microsoft/ChakraCore) in Edge browser/
-
-JavaScript is used not only in **FrontEnd** web applications but in
-**Hybrid** mobile apps ([Ionic](https://ionicframework.com/), [React
-Native](http://www.reactnative.com/), etc.) and **BackEnd**
-applications ([Node.js](https://nodejs.org/),
-[Express](https://www.express.com/),
-[Meteor](https://www.meteor.com/), etc.).
-
-### The Two Pillars of JavaScript
-
-1. **Prototypal Inheritance**
-
-    JavaScript's object system is based on **prototypes**, **not
-    classes**.  A prototype is a working object instance inheriting
-    directly from other objects.  It favors object composition over
-    class inheritance allowing users to create **has-a**, **uses-a**
-    or **can-do** relationships instead of **is-a** relationships
-    established with class inheritance.  [More
-    info.](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
-
-2. **Functional Programming**
-
-    It's the process of building software by composing **pure
-    functions**, **avoiding shared state**, **mutable data**, and
-    **side-effects**.  It's **declarative** rather than
-    **imperative**, and application state flows through pure
-    functions.  This paradigm contrast with Object Oriented
-    Programming, where application state is usually shared and located
-    together with methods in objects.  [More
-    info.](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
-
-## React. A JavaScript library for building user interfaces
-
-![React logo](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png)
-
-> React = Components + Virtual Dom + JSX + Props & State.
-
-**React** is a modern open-source web development toolkit built by Facebook.
-React is a declarative, efficient, and flexible JavaScript library for
-building user interfaces. It lets you compose complex UIs from small
-and isolated pieces of code called *components*.
-
-Dividing web applications up into **components** is a central idea to
-creating applications with React. Instead of a gigantic monolith of
-a web page, you will generally consider the individual pieces that
-make up an application and divide it up into smaller pieces that
-are much easier to develop, debug, and to generally think about.
-
-### Main Characteristics of React
-
-![React operations](https://www.ibm.com/developerworks/library/wa-react-intro/figure1.png)[Image source](https://www.ibm.com/developerworks/library/wa-react-intro/index.html)
-
-* **Component-based Architecture**
-
-    Applications are built using nested, reusable **components**.
-    Components encapsulate a behavior, a view and a state.
-
-* **Declarative Vs Imperative programming**
-
-    Components react to a change in the application state.  Their
-    behavior is defined and a reaction is triggered when one of their
-    properties changes.
-
-* **High Performance, thanks to Virtual DOM**
-
-    When processing changes, React compares the **Virtual DOM** with
-    the DOM to sync and reconcile changes.  As a result, the DOM is
-    efficiently and partially updated.
-
-* **JSX**
-
-    React extends the syntax of JavaScript to produce “elements”.
-    **JSX expressions** are similar to HTML, but in reality they
-    become JS functions that evaluate to objects.  The resulting
-    elements are stored in memory and not in the DOM.
-
-* **One-way Data Flow**
-
-    Nested components get a snapshot of their state by their parent
-    component, use it according to their defined behavior, and when a
-    state change occurs it's propagated upwards using callbacks.
-    State is propagated downwards in the component hierarchy while
-    changes are propagates upwards.
-
-* **Component Life-cycle**
-
-    React defines the life cycle of components and provide a default
-    implementation; these methods are executed at particular moments
-    of the life cycle, and they can be overridden to run custom code.
-
 ![Boring again](boring2.png)
-## Angular Architecture
+# Resources
 
-
-## Resources
-
-### You Don't Know JS (book series)
+## You Don't Know JS (book series)
 
 This is a series of books diving deep into the core mechanisms of the
 JavaScript language.  The first edition of the series is now complete.
@@ -220,23 +154,19 @@ JavaScript language.  The first edition of the series is now complete.
 <a href="http://www.ebooks.com/1977375/you-don-t-know-js-async-performance/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/001/001977/001977375/001977375-hq-168-80.jpg" width="75"></a>&nbsp;
 <a href="http://www.ebooks.com/2481820/you-don-t-know-js-es6-beyond/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/002/002481/002481820/002481820-hq-168-80.jpg" width="75"></a>
 
-### React JS Notes for Professionals
-
-<a href="https://goalkicker.com/ReactJSBook/"><img src="https://goalkicker.com/ReactJSBook/ReactJSGrow.png" width="75"></a>
-
-### React In-depth: An exploration of UI development
-
-<a href="https://www.gitbook.com/download/pdf/book/developmentarc/react-indepth"><img src="https://images.gr-assets.com/books/1474470756l/32173968.jpg" width="75"></a>
-
-### React Enlightenment
-
-<a href="https://www.gitbook.com/download/pdf/book/frontendmasters/react-enlightenment"><img src="https://i.pinimg.com/originals/6e/1f/3f/6e1f3f8de55cb2def135cca9c8865efe.png" width="75"></a>
-
-
-
+https://angular-university.io
 
 
 ![Expert](you_are_expert.png)
 ![Road](road.png)
+
+
+
+
+
+
+
+
+
 
 [< Home Page](../..) | [Next >](../lab-01)
