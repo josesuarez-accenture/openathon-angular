@@ -15,9 +15,11 @@
   * [Components](##Components)
   * [Services](##Services)
 * [Resources](#resources)
+<br/>
+<br/>
 
 <p align="center">
-    <img src="./resources/Angular_full_color_logo.svg.png" width="320">
+    <img src="./resources/Angular_full_color_logo.svg.png" width="280">
 </p>
 
 # Angular. A Framework for Mobile and Desktop
@@ -27,6 +29,8 @@
 The official Angular site states:
 
 > "Angular is a platform that makes it easy to build applications with the web. Angular combines **declarative templates**, **dependency injection**, **end to end tooling**, and **integrated best practices** to solve development challenges. Angular empowers developers to build applications that live on the web, mobile, or the desktop".
+
+<br/>
 
 ## Some History 
 **Angular** was created by **Google** in 2010 taking the Frontend development world by storm having an easy-to-use JavaScript framework that treated HTML as a first-class citizen. 
@@ -48,18 +52,47 @@ Meanwhile, **Facebook** released **React** in 2013 and **Vue** was released late
 - [React vs Angular vs Vue.js — What to choose in 2019?](https://medium.com/@TechMagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)
 - [React vs Angular vs Vue.js: A Complete Comparison Guide](https://medium.com/front-end-weekly/react-vs-angular-vs-vue-js-a-complete-comparison-guide-d16faa185d61)
 
-
-Angular was still dominant but *Google Angular Team* itself decided to release a breaking version in 2016: **Angular 2**.
+<br/>
+Angular was still in a better position but *Google Angular Team* itself decided to release a breaking version in 2016: **Angular 2**.
 
 That was the debacle for Angular, with a new framework not compatible with previous versions, two new languages not clear which could be the official one during Angular alpha and beta stages… 
 > This situation gave a lot of Angular developers reasons to try another options. Also, to complicate it more, Angular 1.x was renamed to **Angular.JS** while Angular 2 kept **Angular**.
 
-Nowadays Angular has been slowly recovering but it’s still very far from React.
+<br/>
+Nowadays Angular has been slowly recovering but it’s still very far from React:
+<br/>
+<br/>
 <p align="center">
     <img src="./resources/angular_npmtrend.png" width="720">
 </p>
 
-[See npm trends](https://www.npmtrends.com/react-vs-@angular/core-vs-vue) for more information
+> [See npm trends](https://www.npmtrends.com/react-vs-@angular/core-vs-vue) for more information.
+
+<br/>
+It's also interesting to have a look to the main actors in Frontend history and when they appeared.
+
+<p align="center">
+    <img src="./resources/jshistory.png" width="720">
+</p>
+<br/>
+... aaaaaaaand since 2006, guess who is still the king talking about usage?
+<details>
+  <summary>Click to know it!</summary>
+ <br/>
+<p align="center">
+    <img src="./resources/jquery.png" width="290">
+</p>
+
+
+<p align="center">
+<br/>
+Yes... 
+<br/>
+    <img src="./resources/sad.jpg" width="290">
+</p>
+<br/>
+</details>
+
 
 ## Angular Facts
 * It’s NEITHER **Java** nor **Angular.js**!!!
@@ -100,14 +133,14 @@ Angular is available in two flavours:
 
 TypeScript makes JavaScript more like a **strongly-typed, object-oriented language** easier to debug and maintain, two of the weakest points of standard JavaScript.
 
-[TypeScript Notes for Professionals](https://goalkicker.com/TypeScriptBook2/) book
+> [TypeScript Notes for Professionals](https://goalkicker.com/TypeScriptBook2/) book
 
 ### Dart
 <img src="./resources/dart.png" width="200">
 
 Dart is an object-oriented, class defined, garbage-collected language using a C-style syntax that transcompiles optionally into JavaScript. It supports interfaces, mixins, abstract classes, reified generics, static typing, and a sound type system.
 
-[See Angular Dart](https://webdev.dartlang.org/angular) for more information.
+> [See Angular Dart](https://webdev.dartlang.org/angular) for more information.
 
 
 >> **Notice that we will focus only on TypeScript in this Openathon**
@@ -169,7 +202,7 @@ JavaScript language.  The first edition of the series is now complete.
 <a href="http://www.ebooks.com/1977375/you-don-t-know-js-async-performance/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/001/001977/001977375/001977375-hq-168-80.jpg" width="75"></a>&nbsp;
 <a href="http://www.ebooks.com/2481820/you-don-t-know-js-es6-beyond/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/002/002481/002481820/002481820-hq-168-80.jpg" width="75"></a>
 
-[Angular University](https://angular-university.io) to learn more...
+> [Angular University](https://angular-university.io) to learn more...
 
 <br/>
 
