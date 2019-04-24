@@ -53,6 +53,7 @@ Meanwhile, **Facebook** released **React** in 2013 and **Vue** was released late
 - [React vs Angular vs Vue.js: A Complete Comparison Guide](https://medium.com/front-end-weekly/react-vs-angular-vs-vue-js-a-complete-comparison-guide-d16faa185d61)
 
 <br/>
+
 Angular was still in a better position but *Google Angular Team* itself decided to release a breaking version in 2016: **Angular 2**.
 
 That was the debacle for Angular, with a new framework not compatible with previous versions, two new languages not clear which could be the official one during Angular alpha and beta stages… 
@@ -93,6 +94,7 @@ Yes...
 <br/>
 </details>
 
+<br/>
 
 ## Angular Facts
 * It’s NEITHER **Java** nor **Angular.js**!!!
@@ -113,6 +115,7 @@ Angular is packed together with a set of robust technologies and libraries for t
     <img src="./resources/angular_ecosystem.png" width="720">
 </p>
 
+> > > Explanation pending
 
 <br/>
 
@@ -146,7 +149,7 @@ Dart is an object-oriented, class defined, garbage-collected language using a C-
 >> **Notice that we will focus only on TypeScript in this Openathon**
 
 
-
+<br/>
 
 # Angular Architecture
 In order to truly understand Angular we need to previously understand it's main concepts.
