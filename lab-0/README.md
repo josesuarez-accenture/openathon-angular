@@ -71,7 +71,8 @@ Nowadays Angular has been slowly recovering but it’s still very far from React
 
 
 ![JavaArggg](./resources/javaA.png)
-
+<br/>
+<br/>
 # Angular Technologies 
 Angular is packed together with a set of robust technologies and libraries for testing like **karma**, **protractor**, **jasmine**, **protractor** and **istambul**, together with code quality tools or linter like **TSLint** or module bundlers like **webpack** among others.
 
@@ -79,13 +80,22 @@ Angular is packed together with a set of robust technologies and libraries for t
     <img src="./resources/angular_ecosystem.png" width="720">
 </p>
 
+
+<br/>
+
 ## Angular Languages
 Angular is available in two flavours: 
 * [TypeScript](https://github.com/Microsoft/TypeScript) 
 * [Dart]( https://www.dartlang.org/)
 
+<br/>
+<p align="center">
+    <img src="./resources/boring1.png" width="440">
+</p>
+
 ### TypeScript
 <img src="./resources/ts.png" width="220">
+
 **[TypeScript](https://github.com/Microsoft/TypeScript)** is a typed superset of **JavaScript** that compiles directly to JavaScript code. It was created by Microsoft as a way for **C#** and **Java** developers to easily move to JavaScript world with a more powerful and type language.
 
 TypeScript makes JavaScript more like a **strongly-typed, object-oriented language** easier to debug and maintain, two of the weakest points of standard JavaScript.
@@ -93,7 +103,8 @@ TypeScript makes JavaScript more like a **strongly-typed, object-oriented langua
 [TypeScript Notes for Professionals](https://goalkicker.com/TypeScriptBook2/) book
 
 ### Dart
-<img src="./resources/dart.png" width="220">
+<img src="./resources/dart.png" width="200">
+
 Dart is an object-oriented, class defined, garbage-collected language using a C-style syntax that transcompiles optionally into JavaScript. It supports interfaces, mixins, abstract classes, reified generics, static typing, and a sound type system.
 
 [See Angular Dart](https://webdev.dartlang.org/angular) for more information.
@@ -116,24 +127,21 @@ A **[Single-Page Application](https://blog.angular-university.io/why-a-single-pa
 What generally happens is that the SPA framework (Angular, for example) intercepts the browser events and instead of making a new request to the server (a new document/page), requests some JSON or performs an action on the server but the page that the user sees is never completely wiped away, and behaves more like a desktop application.
 
 ## Dependency Injection
-**[Dependency Injection (DI)](https://angular.io/guide/dependency-injection)** is an application design pattern where users don't need to create instances by thenselves. *Is a way to create objects that depend on other objects*. A A DI system (Angular DI, for example) supplies the dependent objects (called the dependencies) when it creates an instance of an object .
+**[Dependency Injection (DI)](https://angular.io/guide/dependency-injection)** is an application design pattern where users don't need to create instances by thenselves. *Is a way to create objects that depend on other objects*. A DI system (Angular DI, for example) supplies the dependent objects (called the dependencies) when it creates an instance of an object .
 
-![Boring](./resources/boring1.png)
+
 ## Modules
 **NgModules** are the basic building blocks of an Angular application, which provide a compilation context for **Components** and **Services**.
 <p align="center">
-    <img src="./resources/ngmodule.png" width="420">
+    <img src="./resources/ngmodule.png" width="240">
 </p>
-
-* **Services** provide specific functionality for data or logic not directly related to views. 
-
 
 ## Components
 **[Components](https://angular.io/guide/architecture-components)** are the fundamental building blocks of Angular applications. They display data on the screen, listen for user input, and take action based on that input. 
 
 **Components** defines a class that contains application data and logic, and is associated with an HTML template that defines a view or view hierarchy. This hierarchy allows the definition of arbitrarily complex areas of the screen that can be created, modified, and destroyed as a unit.
 <p align="center">
-    <img src="./resources/component_template.png">
+    <img src="./resources/component_template.png" width="480">
 </p>
 
 ## Services 
@@ -142,7 +150,7 @@ What generally happens is that the SPA framework (Angular, for example) intercep
 **Services** can be reused and injected into components as dependencies, making code modular, reusable, and efficient.
 
 <p align="center">
-    <img src="./resources/services_components.png" width="720">
+    <img src="./resources/services_components.png" width="420">
 </p>
 
 
@@ -163,10 +171,14 @@ JavaScript language.  The first edition of the series is now complete.
 
 [Angular University](https://angular-university.io) to learn more...
 
+<br/>
+
 <p align="center">
     <img src="./resources/you_are_expert.png" width="220">
 </p>
-    <img src="./resources/road.png">
+<br/>
+
+<img src="./resources/road.png">
 
 <br/>
 <br/>
