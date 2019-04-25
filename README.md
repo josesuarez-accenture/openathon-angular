@@ -108,5 +108,7 @@ This edition of the Openathon is divided in the following labs:
 <br/>
 
 [Lab 0. What is Angular](./lab-0)
+
 [Lab 01. Starting a New Angular Project](./lab-01)
-[Lab 01. Angular Basics](./lab-02)
+
+[Lab 02. Angular Basics](./lab-02)
