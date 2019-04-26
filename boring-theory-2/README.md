@@ -43,8 +43,8 @@ Client gets something that is not fulfilling the expectations at all, in most of
 Creating a **solution is not a matter of only coding**. It requires a lot of **subjects** to consider, **objectives and targets** to be achieved, to think in a lot of candidate technologies that must work together aiming for those targets, deciding which one to use and, again, think on **reusability, security, extensibility, robustness, reliability, resilientness…**
 
 We must have clear what the web site must do, which are the functionalities the client is expecting, which are the requirements. Now, change the colloquial concepts:
-- subjects -> *functionalities*
-- objectives and targets -> *requirements*
+- subjects -> *functionalities*.
+- objectives and targets -> *requirements*.
 
 Only having those concepts clear (functionalities and requirements), technical decisions can be taken with solid foundations.
 
@@ -76,7 +76,7 @@ I know that removing Stack Overflow access will reduce your code skill stats by 
 
 Can you even see any mention to code? It's deep inside **Main Principles.**
 
-Well, because the objective of this Openathon is Angular, I’ll focus on those Main Principles. I recommend to each out Architects (real ones) if you want to know more.
+Well, because the objective of this Openathon is Angular, I’ll focus on those Main Principles. I recommend to reach out Architects (real ones) if you want to know more.
 
 
 ## Main Principles 
