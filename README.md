@@ -49,13 +49,13 @@ This edition of the Openathon is divided in the following labs:
 
 | Lab                                 | Title                                      |
 |-------------------------------------|--------------------------------------------|
-| [Lab 0](/labs/lab-0)                | What is Angular                            |
-| [Lab 0.5](/labs/lab-0.5)*            | Angular tools and Good Practices           |
-| [Lab 1](/labs/lab-01)                | Starting a New Angular Project             |
-| [Lab 2](/labs/lab-02)                | Angular Pilars                             |
-| [Lab 3](/labs/lab-03)                | Routing Basics                            |
-| [Lab 4](/labs/lab-04)                | Reactive programming with RxJS             |
-| [Lab 5](/labs/lab-05)                | Proof of Concept                           |
+| [Lab 0](/lab-0)                | What is Angular                            |
+| [Lab 0.5](/lab-0.5)*            | Angular tools and Good Practices           |
+| [Lab 1](/lab-01)                | Starting a New Angular Project             |
+| [Lab 2](/lab-02)                | Angular Pilars                             |
+| [Lab 3](/lab-03)                | Routing Basics                            |
+| [Lab 4](/lab-04)                | Reactive programming with RxJS             |
+| [Lab 5](/lab-05)                | Proof of Concept                           |
 | [Openathon](/openathon/final)       | Openathon final lab                        |
 
 
