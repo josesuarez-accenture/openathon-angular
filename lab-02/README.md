@@ -302,3 +302,12 @@ After saving all the changes, the application should update the event details ac
 </p>
 
 # Resources
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+[< Back](../lab-01) | [Next >](../lab-03)
