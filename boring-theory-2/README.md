@@ -141,4 +141,4 @@ TBD
 
 <br/>
 
-[< What is Angular?](../) | [Lab 01 - Starting a New Angular Project >](../lab-01)
+[< What is Angular?](../boring-theory-1) | [Lab 01 - Starting a New Angular Project >](../lab-01)
