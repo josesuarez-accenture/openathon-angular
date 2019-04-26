@@ -112,3 +112,5 @@ This edition of the Openathon is divided in the following labs:
 [Lab 01. Starting a New Angular Project](./lab-01)
 
 [Lab 02. Angular Basics](./lab-02)
+
+[Lab 03. Routing Basics](./lab-03)
