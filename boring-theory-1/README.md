@@ -1,4 +1,4 @@
-# Lab 0 - What is Angular
+# Boring Theory. Chapter 1 - What is Angular?
 
 ## Table of Contents
 * [Angular. A Framework for Mobile and Desktop](#Angular.-A-Framework-for-Mobile-and-Desktop)
@@ -221,4 +221,4 @@ JavaScript language.  The first edition of the series is now complete.
 <br/>
 
 
-[< Home Page](../) | [Next >](../lab-1)
+[< Home Page](../) | [Main Principles, Solid Practises and Code Quality >](../boring-theory-2)

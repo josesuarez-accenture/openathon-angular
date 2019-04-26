@@ -1,4 +1,4 @@
-# Lab 0.5 - Solid Practises, Code Quality and Angular tools
+# Boring Theory. Chapter 2 - Main Principles, Solid Practises and Code Quality
 
 What’s the meaning of code quality and what the *react-hell* are good practices?
 
@@ -8,51 +8,53 @@ Why can’t I start directly copying and pasting code from Stack Overflow?
 <p align="center">
 <img src="./resources/mug.png" width="300">
 <br/>
-**Code is my life, forget anything else!**
+Code is my life, forget anything else!
 </p>
 <br/>
 
 If you think this way, imagine the next scenario:
 
-> We want to sell a web page to a client for a price. After some information exchange we tell the client the range of possible prices before entering into the details for a better estimation.
+> We want to sell a web site to a client. After some information exchange we tell the client the range of possible prices before entering into the details for a better estimation.
 
-> Some time later, the client tells us that the son of a neighbor can do the same for half the price. We offer our advice against it not because of losing a business opportunity but because the neighbor’s son typical endings… but in the end, nothing can be done and that is.
+> Then, the client tells us that the son of a neighbor can do the same for half the price. We offer our advice against it not only because of losing a business opportunity but because the "neighbor’s son projects" typical endings… In the end, nothing can be done and you lost the client.
 
 <br/>
 
-Imagine now the most typical result…
+Imagine now which could be the most typical result…
 <br/>
 <details>
- <summary>You'll Never Believe the Result, Click Here to Know More! (not a click-bait)</summary>
+ <summary>You'll Never Believe What Happened! Click Here to Know! (java-click-bait)</summary>
 <p align="center">
 
-> Yes, the result is the client getting something unusable.
+> Did you imagine something different from the client getting garbage?
 > **And I'm not joking. I was a neighbor’s son.**
 </p>
   </details>
 <br/>
 
-Client gets something that is not fulfilling the expectations at all, in most of the cases not even finished… forget about that son pain trying to create something complex with the simplified and limited point of view of a coder *(I’m not talking about a developer that are things completely different)…* and don’t talk about **reusability, security, extensibility, robustness, reliability, resilientness…**
+Client gets something that is not fulfilling the expectations at all, in most of the cases not even finished… forget about that son pain trying to create something complex with the simplified and limited point of view of a coder *(I’m not talking about a developer, they are things completely different)…* and don’t talk about **reusability, security, extensibility, robustness, reliability, resilientness…**
 <br/>
 
 > Sure! Nice and funny names that **smoke-sellers** use freely to try to sell the “same” I can do but far away more expensive - *That’s what I could say 20 years ago.*
 
-## But why now, as an architect I insist on THAT is the key for success?
-Creating a solution is not a matter of only coding . It requires a lot of **subjects** to consider, **objectives and targets** to be achieved, to think in a lot of candidate technologies that must work together aiming for those targets, deciding with one to use.
+<br/>
 
-Change now the concepts names:
+## But why now, as an architect, I think in a completely way?
+Creating a **solution is not a matter of only coding**. It requires a lot of **subjects** to consider, **objectives and targets** to be achieved, to think in a lot of candidate technologies that must work together aiming for those targets, deciding which one to use and, again, think on **reusability, security, extensibility, robustness, reliability, resilientness…**
+
+We must have clear what the web site must do, which are the functionalities the client is expecting, which are the requirements. Now, change the colloquial concepts:
 - subjects -> *functionalities*
 - objectives and targets -> *requirements*
 
-Only having those concepts clear (functionalities and requirements), technical decisions can be taken with solid foundation. 
+Only having those concepts clear (functionalities and requirements), technical decisions can be taken with solid foundations.
 
-So, again: **Don’t start coding as your first tasks.**
+So, again: **Don’t start coding as your first tasks.** Firstly, you need to plan, to analyse, to decide, to design before anything related to code, even if your role is a junior developer. You need to think first, code later.
 
 <br/>
 
 # How to achieve success?
 
-I know that removing Stack Overflow access will reduce your code skill stats by -20 points, my apologies, but before the urge of hitting keys is too strong…
+I know that removing Stack Overflow access will reduce your code skill stats by -20 points, my apologies, but before the urge of hitting keys is too strong, here are the main four components I propose for success, no matter if we talk about a simple or complex project.
 
 <br/>
 <p align="center">
@@ -60,6 +62,7 @@ I know that removing Stack Overflow access will reduce your code skill stats by 
 <br/>
 <br/>
 
+### The four Anti-Horsemen of the Apocalypse
 - Designing a **Solid Architecture**.
 - Applying software design **Main Principles**.
 - Defining and measuring **Metrics**.
@@ -73,20 +76,16 @@ I know that removing Stack Overflow access will reduce your code skill stats by 
 
 Can you even see any mention to code? It's deep inside **Main Principles.**
 
+Well, because the objective of this Openathon is Angular, I’ll focus on those Main Principles. I recommend to each out Architects (real ones) if you want to know more.
 
-## Solid Practices? 
 
-I know that removing Stack Overflow access will reduce your code skill stats by -20 points, my apologies, but before the urge of hitting keys is too strong…
-
+## Main Principles 
 <br/>
 <p align="center">
     <img src="./resources/boring2.png" width="440">
 </p>
 
-
-
-
-## SOLID DRY KISS YAGNI
+## S.O.L.I.D. D.R.Y. K.I.S.S. Y.A.G.N.I.
 We are not getting crazy, those are four of the main acronyms in software design principles.
 
 <p align="center">
@@ -114,8 +113,9 @@ Main key points for create and maintain good quality code.
 - Generates quality product.
 
 
+<br/>
 
-## Code Quality Rules
+### Code Quality Rules
 **All development tasks must follow the next rules:**
 - Apply the TypeScript coding guidelines: Microsoft Coding guidelines 
 - Use long and accuracy descriptive names, for classes, methods, constants, variables…
@@ -132,12 +132,13 @@ Main key points for create and maintain good quality code.
 - Once a big task has been finished, revisit it and apply refactorization whenever is possible.
 
 
+<br/>
+
+## Angular Solid Architecture
+TBD
 
 
 
+<br/>
 
-Well, because the objective of this Openathon is Angular, I’ll leave it in this point for now,
-
-
-# Main Tools
-Introduction to the principal tools used real-world projects like: webpack-bundle-analyzer, CompoDoc, Codelyzer, Augury, dependency-check /npm-audit, SonarQube and sonar-scanner.
+[< What is Angular?](../) | [Lab 01 - Starting a New Angular Project >](../lab-01)
