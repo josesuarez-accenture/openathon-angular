@@ -50,7 +50,7 @@ This edition of the Openathon is divided in the following labs:
 | Lab                                 | Title                                      |
 |-------------------------------------|--------------------------------------------|
 | [Lab 0](/labs/lab-0)                | What is Angular                            |
-| [Lab 0.5](/labs/lab-05)*            | Angular tools and Good Practices           |
+| [Lab 0.5](/labs/lab-0.5)*            | Angular tools and Good Practices           |
 | [Lab 1](/labs/lab-01)                | Starting a New Angular Project             |
 | [Lab 2](/labs/lab-02)                | Angular Pilars                             |
 | [Lab 3](/labs/lab-03)                | Routing Basics                            |
