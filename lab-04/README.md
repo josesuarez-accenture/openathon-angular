@@ -19,10 +19,13 @@ To use the service inside a component you have to inject it. This injection is d
 
 In practice to use this mechanism in Angular you have to do it like this:
 
-- Create the service with @Injectable annotation.
-- Declare the service in a Module inside an object named *providers*. This way Angular knows how to obtain the service class itself.
-- Inject the service inside the desired component by declaring it as a parameter in the *constructor* function.
-- Now, you can use it as it if were part of the component (as a constant, function... it depends what the service return).
+* Create the service with @Injectable annotation.
+* Declare the service in a Module inside an object named *providers*. This way Angular knows how to obtain the service class itself.
+* Inject the service inside the desired component by declaring it as a parameter in the *constructor* function.
+* Now, you can use it as it if were part of the component (as a constant, function... it depends what the service return).
+<p align="center">
+    <img src="./resources/dependency-injection.png">
+</p>
 
 > **_Side Note:_**  A dependency doesn't have to be a service—it could be a function, for example, or a value.
 
@@ -66,15 +69,194 @@ export class EventService {
 
 There are some interesting things in this code. Let's take it slowly.
 
+
+2
 ### Imports
 
 As you know, we have to annotate the class by @Injectable typescript annotation, so we have to import it before. Now, Angular know that this class is a injectable service.
 
-Also since we are going to get data from our backend (mocked as a .json file) we need to use the HttpClient module responsible for make the request over the HTTP protocol. We also import the HttpHeaders to typing some simple headers we will set up as an example (*"application/json"*).
+Also since we are going to get data from our backend (mocked as a .json file) we need to use the HttpClient service responsible for make the request over the HTTP protocol. We also import the HttpHeaders to typing some simple headers we will set up as an example (*"application/json"*).
 
 The third import is a class form the RxJS library and it need a little introduction.
 
+
+
 ### Reactive Extensions Library for JavaScript (RxJS)
+
+RxJS itself is out-of-scope for this guide but you need some understanding to grasp the Angular way to manage some features.
+
+An Observable, as described in the official documentation, is the most basic building block of RxJS library that represents an event emitter, which can deliver multiple values of any type (literals, messages, or events, depending on the context). 
+
+The *Observable* emits sequences of events witch can be heard from anywhere in the app. To do this, the component where from we want to use these events have to *subscribe* (*.subscribe()*) as a *Observer*.  The *Observable* object by itself will not cause a network event to be fired unless it is being listened to, so by calling *.subscribe()* (this we will see further) on the Observable, you're essentially attaching a listener to the emitter.
+
+> **_Side Note:_**  The Rx patter is based in the combination of Observer and Iterator patterns. You can lear more about RxJS <a href="https://rxjs-dev.firebaseapp.com/guide/overview" target="_black">here</a>.
+
+Angular use this patter through RxJS library in several features, one of them is HttpClient which produce and consume RxJS Observables.
+
+
+
+### getEvents Observable
+
+Our getEvents method return the result of a "get" method from the HttpClient service. This return is a Observable and we need to type it as Observable (*Observable\<any\>*). When another part of the app consume this method *getEvents* what it will consume is a Observable, so it will have to subscribe to it. Note as we need to inject the HttpClient (renaming it as http) since it is a Service. This service is hosted by *@angular/common/http* module.
+
+In the *get* method we set up two parameters: the route to our .json file (our API endpoint in the future) and the headers (a simple header to inform that we want a json data type).
+
+
+## Consume the Event service
+
+We already have our service that is getting the data from our backend... well, we still need create the json file, but our service does its job. Now we want to use it in the *event-list.component* witch is the component that is showing the events list. Let's do it. The new *event-list.component.ts* looks like:
+
+```javascript
+import { Component, OnInit } from "@angular/core";
+import { Event } from "../../models/event";
+
+import { EventService } from "../../core/event.service";
+
+@Component({
+  selector: "oevents-event-list",
+  templateUrl: "./event-list.component.html",
+  styleUrls: ["./event-list.component.scss"]
+})
+export class EventListComponent implements OnInit {
+  events: Event[];
+  selectedEvent: Event;
+
+  constructor(private eventService: EventService) {}
+
+  ngOnInit() {
+    this.getEvents();
+  }
+
+  onSelectEvent(event: Event) {
+    this.selectedEvent = event;
+  }
+
+  getEvents() {
+    this.eventService.getEvents().subscribe((events: Event[]) => {
+      this.events = events;
+      this.selectedEvent = events[0];
+    });
+  }
+}
+```
+
+We've deleted the hardcoded events array (now they will come from our .json file witch emulates the API data). After that, we have imported our new service *EventService* and injected it trough the constructor naming it *eventService*.
+
+To use it, we crate a new method *getEvents* and inside of it we call the method "getEvents* of the Service (remember we called *getEvents" our method in *event-list.component.ts*). Note that we need to subscribe to it because it return an Observable. Now we run the Observable by calling the method in *ngOnInit()* (this method is started when the component is created... we learn more about this later). The Oservable return us the data from .json file (shaped as the *events* parameter typed with Typescript as Event model). With the data fetched, we assign them to the *events* variable and we select the first to be showed in the view (event-list.component.ts).
+
+## The ending details
+
+Two details left to have the service working. First, create the .json file and second to register the new service in order the app know about it.
+
+Create a new file *events.json* in the *assets* folder with this content (it have to be a well-formed json):
+
+```json
+[
+  {
+    "id": "0",
+    "title": "Introduction to JS - basic",
+    "location": "Barcelona",
+    "date": "2020-03-16",
+    "description": "Nulla aliqua duis adipisicing do amet et ullamco commodo id laborum nulla ipsum culpa. Lorem ipsum commodo quis amet consequat nostrud esse est deserunt. Laboris incididunt esse amet sunt tempor pariatur nisi irure nulla veniam id quis elit. Velit officia quis veniam aliqua. Cupidatat velit enim officia dolor ea veniam proident culpa ea duis labore nostrud. Occaecat in velit esse et. Duis anim ad elit ipsum occaecat Lorem veniam labore consequat laboris non.",
+    "addedBy": "user01"
+  },
+  {
+    "id": "1",
+    "title": "Introduction to Angular",
+    "location": "London",
+    "date": "2019-10-28",
+    "description": "Nulla aliqua duis adipisicing do amet et ullamco commodo id laborum nulla ipsum culpa. Lorem ipsum commodo quis amet consequat nostrud esse est deserunt. Laboris incididunt esse amet sunt tempor pariatur nisi irure nulla veniam id quis elit. Velit officia quis veniam aliqua. Cupidatat velit enim officia dolor ea veniam proident culpa ea duis labore nostrud. Occaecat in velit esse et. Duis anim ad elit ipsum occaecat Lorem veniam labore consequat laboris non.",
+    "addedBy": "user01"
+  },
+  {
+    "id": "2",
+    "title": "Introduction to RXJS",
+    "location": "London",
+    "date": "2019-10-02",
+    "description": "Nulla aliqua duis adipisicing do amet et ullamco commodo id laborum nulla ipsum culpa. Lorem ipsum commodo quis amet consequat nostrud esse est deserunt. Laboris incididunt esse amet sunt tempor pariatur nisi irure nulla veniam id quis elit. Velit officia quis veniam aliqua. Cupidatat velit enim officia dolor ea veniam proident culpa ea duis labore nostrud. Occaecat in velit esse et. Duis anim ad elit ipsum occaecat Lorem veniam labore consequat laboris non.",
+    "addedBy": "user01"
+  },
+  {
+    "id": "3",
+    "title": "AWS",
+    "location": "Berlin",
+    "date": "2019-11-21",
+    "description": "Nulla aliqua duis adipisicing do amet et ullamco commodo id laborum nulla ipsum culpa. Lorem ipsum commodo quis amet consequat nostrud esse est deserunt. Laboris incididunt esse amet sunt tempor pariatur nisi irure nulla veniam id quis elit. Velit officia quis veniam aliqua. Cupidatat velit enim officia dolor ea veniam proident culpa ea duis labore nostrud. Occaecat in velit esse et. Duis anim ad elit ipsum occaecat Lorem veniam labore consequat laboris non.",
+    "addedBy": "user01"
+  },
+  {
+    "id": "4",
+    "title": "Angular NgRx - introduction",
+    "location": "Madrid",
+    "date": "2019-12-05",
+    "description": "Nulla aliqua duis adipisicing do amet et ullamco commodo id laborum nulla ipsum culpa. Lorem ipsum commodo quis amet consequat nostrud esse est deserunt. Laboris incididunt esse amet sunt tempor pariatur nisi irure nulla veniam id quis elit. Velit officia quis veniam aliqua. Cupidatat velit enim officia dolor ea veniam proident culpa ea duis labore nostrud. Occaecat in velit esse et. Duis anim ad elit ipsum occaecat Lorem veniam labore consequat laboris non.",
+    "addedBy": "user01"
+  }
+]
+```
+
+Now, import the service in the *core.moduel.ts* file:
+
+```javascript
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+
+import { EventService } from "./event.service";
+
+@NgModule({
+  declarations: [],
+  imports: [CommonModule, HttpClientModule],
+  providers: [EventService]
+})
+export class CoreModule {}
+```
+
+Note that we need the HttpClientModule in the *imports* object since this is the module where reside *HttpClient* and *HttpHeaders* which we are using in the service.
+
+> **_Side Note:_**  Remember, we need import all Angular modules needed in our app module or feature modules in order their class, interfaces... to be available to import  in our components.
+
+Now we will register the core module in the main app.module.ts where always have to be all thing we use in the app.
+
+```javascript
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+
+// Modules
+import { CoreModule } from "./core/core.module"; // <--- NEW
+import { SharedModule } from "./shared/shared.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { EventsModule } from "./events/events.module";
+import { LoginModule } from "./login/login.module";
+import { ProfileModule } from "./profile/profile.module";
+
+// Components
+import { AppComponent } from "./app.component";
+import { LandingPageComponent } from "./landing-page/landing-page.component";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LandingPageComponent,
+    ToolbarComponent,
+    PageNotFoundComponent
+  ],
+  imports: [
+    CoreModule, // <--- NEW
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    EventsModule,
+    LoginModule,
+    ProfileModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
 
 <br/>
 <br/>
