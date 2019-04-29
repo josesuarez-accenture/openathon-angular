@@ -260,6 +260,17 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 export class AppModule {}
 ```
 
+## Tranform data from HttpClient
+
+In a real app, we will need manage the data that HttpClient service bring us from the API. Perhaps we need transform the format or to handle errors (what is highly recommended).
+
+Since the data is provided by a Observable we need rxjs tools to manage it. This data come in form of a data stream, that is a sequence of data elements made available over time. Realize that the stream is the subject which being observed (data from API), and the observer subscribe to it waiting for arrival data... a data stream.
+
+> **_Side Note:_**  Streams are very known structures in Node world and other contexts. You can deeply learning in a lot of blogs and webpages, like <a href="https://developer.mozilla.org/en-US/docs/Web/API/Streams_API" target="_black">here</a> or <a href="https://nodejs.org/api/stream.html" target="_black">here</a>.
+
+In order to work with streams, rxjs library makes available to us some operators. There are a lot of operators and their learning is out of the scope in this lab, but you can think on it as functions to manage arrays in other contexts. There are operators like filter, map, concat... whitch transform an operate with the data returned by the Observable in a declarative and chaining manner.
+
+
 <br/>
 <br/>
 <br/>
