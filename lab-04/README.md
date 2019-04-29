@@ -216,6 +216,8 @@ Note that we need the HttpClientModule in the *imports* object since this is the
 
 > **_Side Note:_**  Remember, we need import all Angular modules needed in our app module or feature modules in order their class, interfaces... to be available to import  in our components.
 
+A important detail is that we need put the service in the *providers* array. This is so because the provider tell Angular how obtain a value for a dependency and services are dependencies after all. There is more about providers but we leave it as more advanced concepts for now.
+
 Now we will register the core module in the main app.module.ts where always have to be all thing we use in the app.
 
 ```javascript
