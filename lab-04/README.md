@@ -270,6 +270,19 @@ Since the data is provided by a Observable we need rxjs tools to manage it. This
 
 In order to work with streams, rxjs library makes available to us some operators. There are a lot of operators and their learning is out of the scope in this lab, but you can think on it as functions to manage arrays in other contexts. There are operators like filter, map, concat... whitch transform an operate with the data returned by the Observable in a declarative and chaining manner.
 
+In our *event.service.ts* file we have:
+
+```javascript
+return this.http.get(environment.apiURL, { headers }).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+```
+
+Where we can see two operators piped: *retry* (to try again if a error occurs in the request) and catchError (to manage errors). This last operator send the error to a method (*handleError*) where we will process it. (You can see the comments in this method to know what it is doing). If there isn't error, the *get* method (and the *getEvents* method) return the results from the API to our method (named *getEvents* too) calling in the component.
+
+> **_Side Note:_**  There are a lot of operators as you can see in <a href="https://rxjs-dev.firebaseapp.com/guide/operators" target="_blank">the documentation</a>. 
+
 
 <br/>
 <br/>
