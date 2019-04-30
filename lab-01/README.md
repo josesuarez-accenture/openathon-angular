@@ -251,3 +251,10 @@ Edit toolbar/toolbar.component.html to apply the primary color:
 [Angular Material Toolbar](https://material.angular.io/components/toolbar/overview)
 
 
+<br/>
+<br/>
+<br/>
+
+[< Back](..) | [Next >](../lab-02)
+
+
