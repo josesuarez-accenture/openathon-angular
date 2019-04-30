@@ -3,8 +3,9 @@
 In this lab we will create a new Angular Project using the angular-cli. Then we will configure the application to use Angular Material. In addition, we will start working with our first Angular Material component to create the navbar application. 
 * Create an Angular Project 
 * Install Angular Material 
-* Using a Material component 
+* Using a Material component
 
+## Creating a new Angular App
 Create a new Angular application named open-events-front
 ```sh
 ng new open-events-front –-style=scss --prefix=oevents
@@ -15,9 +16,37 @@ Would you like to add Angular routing? (y/N) N
 
 The first time that the application runs the welcome angular page will show up in our browser. 
 
+
 <p align="center">
-    <img src="./resources/angularWelcome.png" border="1">
+    <img src="./resources/angularWelcome.png">
 </p>
+
+
+## Folder Structure
+
+<p align="center">
+    <img src="./resources/folderStructure.png">
+</p>
+
+
+<p align="center">
+    <img src="./resources/rootFilesStructure.png">
+</p>
+
+## Root Module
+The Root Module is the main Angular Module. By default is called AppModule (app.module.ts). This module loads the application and its dependencies.
+
+Basic Root Module
+<p align="center">
+    <img src="./resources/appModule.png">
+</p>
+
+**@NgModule** is a decorator that identifies AppModule as an Angular module class. The metadata object in @NgModule tells Angular how to compile and launch the application.
+* **imports** the BrowserModule that is needed by the application to run in a browser.
+* **declarations** contains a list of the application's components.
+* **bootstrap** the root component that Angular creates and inserts into the index.html.
+
+## Create a new component
 
 Now we will change this page, for that we will create our first component for a landing page using the Angular CLI. 
 ```sh
@@ -26,8 +55,8 @@ ng generate component landing-page
 
 A new folder with the components files will be created under src/app/landing-page.
 
-<p align="center">
-    <img src="./resources/landingFolder.png" border="1">
+<p>
+    <img src="./resources/landingFolder.png">
 </p>
 
 The Angular CLI creates all this structure for us. Besides it imports the new component in the app.module.ts file
@@ -43,6 +72,18 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
  ...
 
 ```
+
+## Component Structure
+<p>
+    <img src="./resources/landingComponent.png">
+</p>
+
+* **@Component** is the decorator that indicates that is a component
+* **selector** is the ID to reference the component in views.
+* **templateUrl** is the view to be used. (Views can be reused in different components)
+* **styleUrls** is an array of styles to be applied.
+
+
 
 Delete the content from landing-page.component.html and copy and paste the following code on it.
 ```javascript
@@ -102,11 +143,11 @@ Our new landing page should appear in the browser.
 
 
 <p align="center">
-    <img src="./resources/landingPage.png" border="1">
+    <img src="./resources/landingPage.png">
 </p>
 
 
-
+## Angular Material 
 
 To configure our project to use Angular Material, we need to install the following: Angular Material, the Component Dev Kit (CDK), Animations and HammerJS:
 
@@ -177,7 +218,7 @@ Now edit app/app.component.html and add oevetns-toolbar.
 After saving all the changes, we should see our toolbar.
 
 <p align="center">
-    <img src="./resources/landingPageToolbar.png" border="1">
+    <img src="./resources/landingPageToolbar.png">
 </p>
 
 
@@ -198,7 +239,7 @@ Edit toolbar/toolbar.component.html to apply the primary color:
 ```
 
 <p align="center">
-    <img src="./resources/landingPageTheme.png" border="1">
+    <img src="./resources/landingPageTheme.png">
 </p>
 
 
