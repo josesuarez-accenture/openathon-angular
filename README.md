@@ -45,34 +45,36 @@ OpenEvents web application will consist on a Main page and...
 
 ## Openathon IV Labs
 
-This edition of the Openathon is divided in the following labs:
+This edition of the Openathon is divided in the following theory and laboratories:
 
 | Lab                                 | Title                                      |
 |-------------------------------------|--------------------------------------------|
-| [Lab 0](/lab-0)                | What is Angular                            |
-| [Lab 0.5](/lab-0.5)*            | Angular tools and Good Practices           |
-| [Lab 1](/lab-01)                | Starting a New Angular Project             |
-| [Lab 2](/lab-02)                | Angular Pilars                             |
-| [Lab 3](/lab-03)                | Routing Basics                            |
-| [Lab 4](/lab-04)                | Reactive programming with RxJS             |
-| [Lab 5](/lab-05)                | Proof of Concept                           |
-| [Openathon](/openathon/final)       | Openathon final lab                        |
+| [Boring Theory. Chapter 1](/boring-theory-1)                | What is Angular                            |
+| [Boring Theory. Chapter 2](/boring-theory-2)           | Main Principles, Solid Practises and Code Quality           |
+| Lab 1                | Starting a New Angular Project             |
+| Lab 2                | Angular Basics                             |
+| Lab 3                | Routing Basics                            |
+| Lab 4                | Services             |
+| Lab 5                | Proof of Concept                           |
+| Openathon       | Openathon final lab                        |
 
 
-\* Optional Lab for further learning
+
+<br/>
+<br/>
 
 ## Prerequisites
 
-1. Install **Visual Studio Code** for your operating system:
+1. **Visual Studio Code**
 
     **Visual Studio Code** is a source code editor with support
     for debugging, embedded Git control, syntax
     highlighting, intelligent code completion, snippets, and code
     refactoring.
 
-    [Click here](https://code.visualstudio.com/) to download and install
+    [Click here](https://code.visualstudio.com/) to download and install.
 
-2. Install **Node.js** for your operating system:
+2. **Node.js**
 
     **Node.js** is a free, open source server environment that runs on
     various platforms (Windows, Linux, Unix, Mac OS X, etc.) using
@@ -84,7 +86,7 @@ This edition of the Openathon is divided in the following labs:
     for Node.js and the world's largest software registry.
 
 
-3. Install **Angular CLI**
+3. **Angular CLI**
 
     Open your terminal or command prompt and run:
 
@@ -96,7 +98,7 @@ This edition of the Openathon is divided in the following labs:
 
     [Click here](https://cli.angular.io/) to know more.
 
-5. Download and install **Angular Augury**
+5. **Angular Augury**
 
     **Angular Augury** is a Chrome/Firefox DevTools extension for Angular. It allows you to inspect the
     React component hierarchies in the Chrome Developer Tools.
@@ -106,5 +108,7 @@ This edition of the Openathon is divided in the following labs:
 <br/>
 <br/>
 <br/>
+
+
 
 [What is Angular? >](./boring-theory-1)

@@ -1,11 +1,32 @@
 # Boring Theory. Chapter 1 - What is Angular?
 
+This is the first **IV Openathon Custom Software Engineering** *"laboratory"*. 
+> But it's theory! - You could say. 
+
+Yes, **theory is boring for a lot of coders**. But there is an exam at the end…
+
+We are going to design and develop a solution in two parts where the current Openathon IV will cover the Frontend while the Openathon V will cover the Backend. We consider that no Frontend technology can focus only on the coding point of view. This is not a training for ~~JavaScript~~ **TypeScript**, it’s not only about a framework like **Angular*. It also includes the **architecture and good practises** required for **QUALITY** [see Boring Theory 2.](https://github.com/Albarian/openathon-angular/tree/master/boring-theory-2
+) 
+
+So, let's start with Angular itself.
+<details>
+ <summary>What about the exam?</summary>
+ <p align="center">
+
+ <img src="./resources/exam.png" width="280">
+  <br/>
+There is not any exam.
+</p>
+  </details>
+
+  <br/>
+  <br/>
+
 ## Table of Contents
 * [Angular. A Framework for Mobile and Desktop](#Angular.-A-Framework-for-Mobile-and-Desktop)
-  * [Some History](##Some-History)
-  * [Angular Facts](##Angular-Facts)
+  * [Some History](###Some-History)
+  * [Some Angular Facts](##Some-Angular-Facts)
 * [Angular Technologies](##Angular-Technologies)
-  * [Angular Languages](##Angular-Languages)
     * [TypeScript](###TypeScript)
     * [Dart](###Dart)
 * [Angular Architecture](#Angular-Architecture)
@@ -22,7 +43,7 @@
     <img src="./resources/Angular_full_color_logo.svg.png" width="280">
 </p>
 
-# Angular. A Framework for Mobile and Desktop
+# Angular. THE Framework
 
 **Angular** is a very popular framework focused on the creation of **SPAs** based heavily on its own **Dependency Injection Framework**, Angular two main pillars: **Components** and **Services**, and **TypeScript**.
 
@@ -30,39 +51,54 @@ The official Angular site states:
 
 > "Angular is a platform that makes it easy to build applications with the web. Angular combines **declarative templates**, **dependency injection**, **end to end tooling**, and **integrated best practices** to solve development challenges. Angular empowers developers to build applications that live on the web, mobile, or the desktop".
 
-<br/>
+And you:
 
-## Some History 
-**Angular** was created by **Google** in 2010 taking the Frontend development world by storm having an easy-to-use JavaScript framework that treated HTML as a first-class citizen. 
+> That's nice, official documentation. Where is the code?
 
-Angular was very popular for:
+**Not yet!** First, 
+### Some history
+
+It's important to notice that **Angular** was created by **Google** in 2010 taking the Frontend development world by storm having an easy-to-use JavaScript framework that treated HTML as a first-class citizen. 
+
+When you decide to bet for a technology (and there are new Frontend technologies each Tuesday) two of the parameters you need to think about are:
+- who is behind it? will it last 1 year?
+- what's different from what already we have? Is it a new trend wave?
+
+> Ok, Angular had Google but what offered? Why was very popular?
+
+The keys were:
 * Easy **binding** of data to HTML elements.
 * **Directives** providing an easy way to create reusable HTML + CSS components. 
 * **Client-side reusable components** very popular in server-side.
 *  **Dependency injection** also popular in enterprise applications.
 
-But because of its popularity and older JavaScript versions in that time, developers were starting to run into severe performance problems when they tried to bind too many model objects to too many DOM elements.
+During two centuries, that is, 3 years in Frontend terms, Angular became one of the most popular Frontend technologies. But because of its popularity and the older JavaScript versions in that time (like ES5), developers were starting to run into **severe performance problems**. Why? because the overuse of the main original key benefits: **binding too many model objects to too many DOM elements.**
 
-Meanwhile, **Facebook** released **React** in 2013 and **Vue** was released later by a single developer, **Evan You**, in 2014.
+When Angular performance problems were at its peak, **Facebook** released **React** in 2013 and **Vue** was released a bit lated by a single developer, **Evan You** backed in Patreon, in 2014.
 <p align="center">
     <img src="./resources/competitors.png" width="620">
 </p>
 
-> Some comparisons in [Medium](https://medium.com):
+It's very interesting to know why those frameworks/libraries arose but to keep focused on Angular I'll let some comparisons in [Medium](https://medium.com) for you instead:
 - [React vs Angular vs Vue.js — What to choose in 2019?](https://medium.com/@TechMagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d)
 - [React vs Angular vs Vue.js: A Complete Comparison Guide](https://medium.com/front-end-weekly/react-vs-angular-vs-vue-js-a-complete-comparison-guide-d16faa185d61)
 
 <br/>
 
-Angular was still in a better position but *Google Angular Team* itself decided to release a breaking version in 2016: **Angular 2**.
+### So, what happened then?
 
-That was the debacle for Angular, with a new framework not compatible with previous versions, two new languages not clear which could be the official one during Angular alpha and beta stages… 
-> This situation gave a lot of Angular developers reasons to try another options. Also, to complicate it more, Angular 1.x was renamed to **Angular.JS** while Angular 2 kept **Angular**.
+Angular was still in a better position but to complicate things even more, *Google Angular Team* itself decided to release a breaking version in 2016: **Angular 2**.
+
+That was the debacle for Angular: a new framework not compatible with previous versions, two new languages (TypeScript and Dart) not having clear which could be the official one… 
+
+> This situation gave a lot of Angular developers reasons to try another options. Also, to complicate it more, Angular 1.x was renamed to **Angular.js** while Angular 2 kept **Angular**.
 
 <br/>
-Nowadays Angular has been slowly recovering but it’s still very far from React:
+
+Luckily, Angular (Angular 2, not Angular.js) slowly started to recover but currently is still very far from React as you can see in the next graph that shows the number of times each package has been downloaded from [NPM.](https://www.npmjs.com/)
 <br/>
 <br/>
+
 <p align="center">
     <img src="./resources/angular_npmtrend.png" width="720">
 </p>
@@ -70,13 +106,15 @@ Nowadays Angular has been slowly recovering but it’s still very far from React
 > [See npm trends](https://www.npmtrends.com/react-vs-@angular/core-vs-vue) for more information.
 
 <br/>
-It's also interesting to have a look to the main actors in Frontend history and when they appeared.
+Have a look to the main actors in Frontend history and when they appeared.
 
 <p align="center">
     <img src="./resources/jshistory.png" width="720">
 </p>
 <br/>
-... aaaaaaaand since 2006, guess who is still the king talking about usage?
+
+... Apart from React, Angular y Vue, guess who is still the king, the most used Frontend technology since 2006?
+
 <details>
   <summary>Click to know it!</summary>
  <br/>
@@ -96,7 +134,7 @@ Yes...
 
 <br/>
 
-## Angular Facts
+### Some Angular Facts
 * It’s NEITHER **Java** nor **Angular.js**!!!
 * It’s a **Framework**. Suck that **React**!
 * **JavaScript** is dead. Long life **TypeScript**! :+1:
@@ -108,19 +146,33 @@ Yes...
 ![JavaArggg](./resources/javaA.png)
 <br/>
 <br/>
+<br/>
+
 # Angular Technologies 
-Angular is packed together with a set of robust technologies and libraries for testing like **karma**, **protractor**, **jasmine**, **protractor** and **istambul**, together with code quality tools or linter like **TSLint** or module bundlers like **webpack** among others.
+
+Angular is packed together with a set of robust technologies and libraries, for example:
+
+- **[Karma](https://karma-runner.github.io/latest/index.html)**, testing environment.
+- **[Jasmine](https://jasmine.github.io/)**, behavior-driven development framework for testing.
+- **[Protractor](https://www.protractortest.org/#/)**, end-to-end test framework.
+- **[Istambul](https://istanbul.js.org/)**, unit-test test coverage library.
+- **[TSLint](https://palantir.github.io/tslint/)**, extensible static analysis tool.
+- **[Webpack](https://webpack.github.io/)**, static module bundler.
+
+They are not the target of this training and we can't enter into each of then so I will let you a nice diagram architects like to show talking about **Angular Technology Stack**:
 
 <p align="center">
     <img src="./resources/angular_ecosystem.png" width="720">
 </p>
 
-> > > Explanation pending
+<br/>
+
+> One colleague of mine explained some time ago that it’s nice to create diagrams full of boxes… and let others to implement them :) 
 
 <br/>
 
-## Angular Languages
-Angular is available in two flavours: 
+In that diagram, you can see that appears **TypeScript**, one of the languages you can use with Angular. Let's stop a moment to talk about them.
+
 * [TypeScript](https://github.com/Microsoft/TypeScript) 
 * [Dart]( https://www.dartlang.org/)
 
@@ -145,8 +197,9 @@ Dart is an object-oriented, class defined, garbage-collected language using a C-
 
 > [See Angular Dart](https://webdev.dartlang.org/angular) for more information.
 
+<br/>
 
->> **Notice that we will focus only on TypeScript in this Openathon**
+**Notice that we will focus only on TypeScript in this Openathon, and yes, you can also use vanilla JavaScript (ES6) but I prefer to ignore it.**
 
 
 <br/>
@@ -190,13 +243,57 @@ What generally happens is that the SPA framework (Angular, for example) intercep
 </p>
 
 
+<br/>
+
+At last, this theory laboratory has finished. Next section is for extending your knowledge but I sincerely recommend to have a look at it.
+
+<p align="center">
+    <img src="./resources/longlive.png" width="120">
+</p>
+
+
+
+<br/>
 
 # Resources
-Links to the official documentation, free books, free starter kits...
-## You Don't Know JS (book series)
+
+### Official Sites
+- [Angular website](https://angular.io/)
+- [Official docs](https://angular.io/docs)
+- [5-minute Quickstart](https://angular.io/guide/quickstart)
+- [Cheat Sheet](https://angular.io/guide/cheatsheet)
+- [Github Repo](https://github.com/angular/angular)
+- [Twitter](https://twitter.com/angular)
+- [Angular Roadmap](https://angular.io/guide/releases) because it's important to know when your code will be deprecated :)
+- [Official Angular Blog](https://blog.angular.io/)
+
+<br/>
+
+
+### Books
+<a href="https://goalkicker.com/TypeScriptBook2/"><img src="./resources/l1.jpeg" width="75"> TypeScript Notes for Professionals</a>
+
+<a href="https://goalkicker.com/Angular2Book/"><img src="./resources/l4.jpeg" width="75"> Angular 2+ Notes for Professional</a>
+
+<a href="https://goalkicker.com/CSSBook/"><img src="./resources/l2.jpeg" width="75"> CSS Notes for Professionals</a>
+
+<a href="https://goalkicker.com/HTML5Book/"><img src="./resources/l3.jpeg" width="75"> HTML5 Notes for Professionals</a>
+
+<br/>
+
+
+### Others
+- [Angular In Depth](https://blog.angularindepth.com/)
+- [Angular Articles in Thoughtram](https://goalkicker.com/Angular2Book/)
+- [Angular University](https://angular-university.io) to learn more...
+
+<br/>
+
+
+### You Don't Know JS (book series)
 
 This is a series of books diving deep into the core mechanisms of the
-JavaScript language.  The first edition of the series is now complete.
+JavaScript language.  It's JavaScript... but it's free!
 
 <a href="http://www.ebooks.com/1993212/you-don-t-know-js-up-going/simpson-kyle/"><img src="https://i2.ebkimg.com/previews/001/001993/001993212/001993212-hq-168-80.jpg" width="75"></a>&nbsp;
 <a href="http://www.ebooks.com/1647631/you-don-t-know-js-scope-closures/simpson-kyle/"><img src="https://i1.ebkimg.com/previews/001/001647/001647631/001647631-hq-168-80.jpg" width="75"></a>&nbsp;
@@ -205,10 +302,13 @@ JavaScript language.  The first edition of the series is now complete.
 <a href="http://www.ebooks.com/1977375/you-don-t-know-js-async-performance/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/001/001977/001977375/001977375-hq-168-80.jpg" width="75"></a>&nbsp;
 <a href="http://www.ebooks.com/2481820/you-don-t-know-js-es6-beyond/simpson-kyle/"><img src="https://i0.ebkimg.com/previews/002/002481/002481820/002481820-hq-168-80.jpg" width="75"></a>
 
-> [Angular University](https://angular-university.io) to learn more...
+
 
 <br/>
+<br/>
 
+<br/>
+After all of that:
 <p align="center">
     <img src="./resources/you_are_expert.png" width="220">
 </p>
