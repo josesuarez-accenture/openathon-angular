@@ -338,6 +338,68 @@ export class EventService {
 > **_Side Note:_**  There are a lot of operators as you can see in <a href="https://rxjs-dev.firebaseapp.com/guide/operators" target="_blank">the documentation</a>. 
 
 
+##JSON-Server
+JSON-server gives us a very simple way to create a REST API server. It is a node module and we can install it as globally. Run the following code in your terminal.
+
+```sh
+npm install json-server -g 
+```
+* Confiure the json-server. Choose one location in your computer and create a new folder called 'json-server'. Then go to this 
+ <a htef="./db.json"> Donwnload db.json file </a> and move it into the folder that we just have created. 
+ 
+* Open the comand line and go into the json-server folder. Now we are going to run our server with the following command: 
+
+```sh
+	json-server --watch db.json
+```
+
+<p>
+    <img src="./resources/jsonServerRunning.png">
+</p>
+
+<br/>
+> **_Side Note:_** 
+By default the server will start at port number 3000. If you wish to change the port number you can do it with the '-p' parameter.
+```sh
+	json-server -p3004 --watch db.json
+```
+
+
+Once our server is running and we should be able to access to our database data through the following address:
+
+http://localchost:3000/events
+
+
+
+## Adding the API Url 
+Now that we have our server runing we have to make some changes in our code. First lets change the environment.ts file and add the new API Url.
+
+```javascript
+export const environment = {
+  production: true,
+  apiURL: "http://localhost:3000/"
+};
+```
+
+In event.service.ts let's change the API call.
+```javascript
+  getEvents(): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+
+    return this.http.get(environment.apiURL + "events", { headers }).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+```
+
+Save all the changes, the application should display the event data now.
+
+## Resources
+[json-server](https://github.com/typicode/json-server)
+
 <br/>
 <br/>
 <br/>
