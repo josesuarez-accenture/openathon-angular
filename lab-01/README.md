@@ -2,8 +2,8 @@
 
 
 Did if you skip the theory? Go back and start!
-- [What is Angular?](https://github.com/Albarian/openathon-angular/tree/master/boring-theory-1)
-- [Main Principles, Solid Practises and Code Quality](https://github.com/Albarian/openathon-angular/tree/master/boring-theory-2)
+- [What is Angular?](../boring-theory-1)
+- [Main Principles, Solid Practises and Code Quality](../boring-theory-2)
 
 
 <br/>
@@ -115,7 +115,7 @@ We are going to analyse the **Root Module**.
 
 It is the main **Angular Module**. By default is called AppModule *app.module.ts* and loads the application and its dependencies.
 
-Do you remember the theory about **Modules**? Have a look again to what we defined in [Angular Modules](boring-theory-1##Modules).
+Do you remember the theory about **Modules**? Have a look again to what we defined in [Angular Modules](../boring-theory-1##Modules).
 
 A basic **Root Module looks** like:
 <p align="center">
@@ -143,7 +143,7 @@ There are four main types:
 
 ## Create a new component
 
-Remember: [Angular Components](boring-theory-1##Components).
+Remember: [Angular Components](../boring-theory-1##Components).
 
 When Angular Project Wizard creates the project, a component is created for us. Now we will create our first own component for the landing page we want to customise, using the Angular CLI:
 
@@ -394,8 +394,8 @@ And that's all for now. With this introduction we have revisited main concepts l
 - [Angular Material](https://material.angular.io/)
 - [Sass styles](https://sass-lang.com/)
 - [Angular Decorators](https://ultimatecourses.com/blog/angular-decorators)
-- [Angular Components](boring-theory-1##Components)
-- [Angular Modules](boring-theory-1##Modules).
+- [Angular Components](../boring-theory-1##Components)
+- [Angular Modules](../boring-theory-1##Modules)
 
 <br/>
 <br/>
