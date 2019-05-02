@@ -1,7 +1,7 @@
 # Lab 01 - Starting a New Angular Project
 
 
-Did if you skip the theory? Go back and start!
+Did if you skip the theory? Please check:
 - [What is Angular?](../boring-theory-1)
 - [Main Principles, Solid Practises and Code Quality](../boring-theory-2)
 
