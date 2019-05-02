@@ -70,7 +70,6 @@ export class EventService {
 There are some interesting things in this code. Let's take it slowly.
 
 
-2
 ### Imports
 
 As you know, we have to annotate the class by @Injectable typescript annotation, so we have to import it before. Now, Angular know that this class is a injectable service.
@@ -273,13 +272,68 @@ In order to work with streams, rxjs library makes available to us some operators
 In our *event.service.ts* file we have:
 
 ```javascript
+...
 return this.http.get(environment.apiURL, { headers }).pipe(
       retry(3),
       catchError(this.handleError)
     );
+...
 ```
 
-Where we can see two operators piped: *retry* (to try again if a error occurs in the request) and catchError (to manage errors). This last operator send the error to a method (*handleError*) where we will process it. (You can see the comments in this method to know what it is doing). If there isn't error, the *get* method (and the *getEvents* method) return the results from the API to our method (named *getEvents* too) calling in the component.
+Where we can see two operators piped: *retry* (to try again if a error occurs in the request) and catchError (to manage errors). This last operator send the error to a method (*handleError*) where we will process it. If there isn't error, the *get* method (and the *getEvents* method) return the results from the API to our method (named *getEvents* too) calling in the component.
+
+### Environments management
+
+In the last code showed you can see that we changed our *assets/events.json* where we're consuming the data for a variable *environment.apiURL*.  This variable has the same value (*assets/events.json*) but we're getting from *environmet* file located in *environments/environment*. If we're in a development environmet, Angular will get the *apiURL* value from the *environmet.ts* file, but if the environment is production, Angular will chose the value from *environmet.prod.ts* file. This way, we can to set up diferente variables depending of the environment we are.
+
+At the end, and adding the *handleError* method earlier mentioned to manage errors (you can see the comments in this method to know what it is doing), the *event.service.ts* will be:
+
+```javascript
+import { Injectable } from "@angular/core";
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders
+} from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { catchError, retry } from "rxjs/operators";
+import { environment } from "../../environments/environment";
+
+@Injectable({
+  providedIn: "root"
+})
+export class EventService {
+  constructor(private http: HttpClient) {}
+
+  getEvents(): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+
+    return this.http.get(environment.apiURL, { headers }).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
+  // Error handling
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error("An error occurred:", error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` + `body was: ${error.error}`
+      );
+    }
+    // return an observable with a user-facing error message
+    return throwError("Something bad happened; please try again later.");
+  }
+}
+```
 
 > **_Side Note:_**  There are a lot of operators as you can see in <a href="https://rxjs-dev.firebaseapp.com/guide/operators" target="_blank">the documentation</a>. 
 
