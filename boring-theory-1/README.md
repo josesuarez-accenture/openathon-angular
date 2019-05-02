@@ -321,4 +321,4 @@ After all of that:
 <br/>
 
 
-[< Home Page](../) | [Main Principles, Solid Practises and Code Quality >](../boring-theory-2)
+[< Home Page](../README.md) | [Main Principles, Solid Practises and Code Quality >](../boring-theory-2)
