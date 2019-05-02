@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: "assets/events.json"
+  apiURL: "http://localhost:3000/"
 };
 
 /*
