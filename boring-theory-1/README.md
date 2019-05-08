@@ -284,7 +284,7 @@ At last, this theory laboratory has finished. Next section is for extending your
 
 ### Others
 - [Angular In Depth](https://blog.angularindepth.com/)
-- [Angular Articles in Thoughtram](https://goalkicker.com/Angular2Book/)
+- [Angular Articles in Thoughtram](https://blog.thoughtram.io/categories/angular-2/)
 - [Angular University](https://angular-university.io) to learn more...
 
 <br/>
