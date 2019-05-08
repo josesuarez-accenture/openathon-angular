@@ -45,7 +45,7 @@ There is not any exam.
 
 # Angular. THE Framework
 
-**Angular** is a very popular framework focused on the creation of **SPAs** based heavily on its own **Dependency Injection Framework**, Angular two main pillars: **Components** and **Services**, and **TypeScript**.
+**Angular** is a very popular framework focused on the creation of **SPAs** based heavily on its own **Dependency Injection Framework**, Angular three main pillars: **Modules** - **Components** - **Services**, and **TypeScript**.
 
 The official Angular site states:
 
