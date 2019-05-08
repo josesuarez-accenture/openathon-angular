@@ -140,7 +140,7 @@ Yes...
 * **JavaScript** is dead. Long life **TypeScript**! :+1:
 * It’s **NOT** Java...
 * ~~MVC~~, is **MVVM** = Model–View–ViewModel.
-* It’s **NOT** Java!!! HHRR people, please, stop sending Frontend positions as "Java CVs" **;)**
+* It’s **NOT** Java!!! LinkedIn recruiters, please, stop sending Frontend positions as "Java CVs" **;)**
 
 
 ![JavaArggg](./resources/javaA.png)
