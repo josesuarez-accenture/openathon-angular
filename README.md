@@ -1,7 +1,11 @@
 # IV Openathon Custom Open Cloud
 
+<p align="center">
+    <img src="./boring-theory-1/resources/ivo.png">
+</p>
+
 You are welcome to a new **Openathon** edition organized for the
-**Accenture Technology Custom Open Cloud community** where, once
+**Accenture Technology Custom Software  Engineering** where, once
 again, we will have the opportunity to discover, in a practical way,
 the possibilities offered by the different architectures and leading
 frameworks in the market.
@@ -67,14 +71,22 @@ This edition of the Openathon is divided in the following theory and laboratorie
 
 1. **Visual Studio Code**
 
+    <img src="./boring-theory-1/resources/vscode.png" width="100">
+
+
     **Visual Studio Code** is a source code editor with support
     for debugging, embedded Git control, syntax
     highlighting, intelligent code completion, snippets, and code
     refactoring.
 
-    [Click here](https://code.visualstudio.com/) to download and install.
+    [Click here](https://code.visualstudio.com/) to download and install. **We recommend to use the LTS** version.
+
+<br/>
 
 2. **Node.js**
+
+    <img src="./boring-theory-1/resources/node.png" width="180">
+
 
     **Node.js** is a free, open source server environment that runs on
     various platforms (Windows, Linux, Unix, Mac OS X, etc.) using
@@ -85,8 +97,11 @@ This edition of the Openathon is divided in the following theory and laboratorie
     This installation will also install **npm**, the package manager
     for Node.js and the world's largest software registry.
 
+<br/>
 
 3. **Angular CLI**
+
+    <img src="./boring-theory-1/resources/cli.png" width="300">
 
     Open your terminal or command prompt and run:
 
@@ -97,11 +112,21 @@ This edition of the Openathon is divided in the following theory and laboratorie
     **Angular CLI** is a command-line interface tool used to initialize, develop, scaffold, and maintain Angular applications.
 
     [Click here](https://cli.angular.io/) to know more.
+    
+   > Depending on your computer and operating system, some dependencies will not be installed and you can get warnings during installation process. In the same terminal or a new one run: 
+   > ```sh
+   > ng v
+   > ```
+    > If everything is fine, a list of Angular CLI and Node version should appear.
 
-5. **Angular Augury**
+<br/>
 
-    **Angular Augury** is a Chrome/Firefox DevTools extension for Angular. It allows you to inspect the
-    React component hierarchies in the Chrome Developer Tools.
+4. **Angular Augury**
+
+    <img src="./boring-theory-1/resources/augury.png" width="140">
+
+    **Angular Augury** is a Chrome/Firefox DevTools extension for Angular. It allows you to inspect 
+    Angular component hierarchies in Chrome Developer Tools.
 
     [Click here](https://augury.rangle.io/) to download and install.
 
