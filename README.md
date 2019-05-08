@@ -1,11 +1,11 @@
 <p align="center">
-    <img src="./boring-theory-1/resources/header.png">
+    <img src="./boring-theory-1/resources/header.png" >
 </p>
 
 # IV Openathon Custom Open Cloud
 
 <p align="center">
-    <img src="./boring-theory-1/resources/ivo.png">
+    <img src="./boring-theory-1/resources/ivo.png" width="600">
 </p>
 
 You are welcome to a new **Openathon** edition organized for the
@@ -23,40 +23,41 @@ frameworks in the market.
 <br/>
 
 ## The target application: Open Events
-Final App definition / Features in this Openathon
+
+**Open Events** is a solution that will allow us to register and retrieve the different technology events that are interesting for the **CSE Communities**. 
+
+The **Frontend component** will be developed using **Angular**. We are going to learn step by step during the next laboratories not only Angular theory but general **Architecture Good Practises** and **Main Principles**.
+
+We will finish with a fully working Webapp using mocked data waiting for the solution **Backend** counterpart that will be the subject for the **V Openathon**.
+
+Once **Open Events** solution is finished, it will be published as a tool for **CSE Communities** activities.
+
+
+**Open Events** functionalities :
 
 * Landing page: Intro and description. Shortcuts.
 * Menu
   * Home
-  * Events 
+  * Events
     * See events
       * List (with filters as popular, last, location…)
       * Calendar
-      * Event page selected with details 
-    * Find events (filters) 
-    * Create event (with categories) 
-    * Delete event 
-    * Edit event 
-    * Your events (as organizer) 
-  * Login-Register 
-    * Register page 
-    * Login page 
-  * Profile 
-    * See profile 
-    * Edit profile 
+      * Event page selected with details
+    * Find events (filters)
+    * Create event (with categories)
+    * Delete event
+    * Edit event
+    * Your events (as organizer)
+  * Login-Register
+    * Register page
+    * Login page
+  * Profile
+    * See profile
+    * Edit profile
     * Delete profile
 
-For this Openathon with limited backend (mockups)
 
-
-
-## What we are going to do
-
-We will learn...
-
-OpenEvents web application will consist on a Main page and...
-
-
+<br/>
 
 ## Openathon IV Labs
 
@@ -70,7 +71,8 @@ This edition of the Openathon is divided in the following theory and laboratorie
 | Lab 2                | Angular Basics                             |
 | Lab 3                | Routing Basics                            |
 | Lab 4                | Services             |
-| Lab 5                | Proof of Concept                           |
+| ...             | ...                           |
+| Proof of Concept           |                           |
 | Openathon       | Openathon final lab                        |
 
 
@@ -89,7 +91,7 @@ This edition of the Openathon is divided in the following theory and laboratorie
     highlighting, intelligent code completion, snippets, and code
     refactoring.
 
-[Click here](https://code.visualstudio.com/) to download and install. **We recommend to use the LTS** version.
+[Click here](https://code.visualstudio.com/) to download and install. 
 
 <br/>
 
@@ -102,7 +104,9 @@ This edition of the Openathon is divided in the following theory and laboratorie
     various platforms (Windows, Linux, Unix, Mac OS X, etc.) using
     the JavaScript runtime built on Chrome's V8 JavaScript engine.
 
-[Click here](https://nodejs.org/en/download/) to download and install.
+[Click here](https://nodejs.org/en/download/) to download and install. 
+
+> **We recommend to use the LTS** version.
 
 This installation will also install **npm**, the package manager
 for Node.js and the world's largest software registry.

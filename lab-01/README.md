@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
+
 # Lab 01 - Starting a New Angular Project
 
 
@@ -61,13 +65,15 @@ Would you like to add Angular routing? (y/N) N
 <br/>
 
 #### Step 2. Execute the project
-Open *Visual Studio Code*. In *File Menu / Open*, navigate to the folder **open-events-front**.
+Open *Visual Studio Code*. In *File Menu / Open...*, navigate to the folder **open-events-front**, select the folder and open it.
 
 We are going directly to execute the project created by *Angular Cli Wizard*. Open a console/terminal o even better, open Visual Studio Code integrated terminal and type:
 
 ```sh
 ng serve
 ```
+
+> If **ng** command doesn't work, try to close and open again the terminal to allow it to get the new global variables in the case you have just installed the pre-requisites or dependencies.
 
 If all has worked fine, the application is served by your local **Node**. Open a browser and go to [http://localhost:4200](http://localhost:4200) where you must get: 
 
@@ -95,7 +101,7 @@ We have marked the main elements like configurations files for TSLint, TypeScrip
 - **tsconfig.json**: configures and customize the compiler options. Remembar that TypeScript is *"compiled"* to uggly-JavaScript.
 - **tslint.json**: default TSLint configuration for apps in the workspace.
 
-We recommend to dedicate some time to check those files. It's important to understand how Angular Framework works.
+> We recommend to dedicate some time to check those files and folders. It's important to understand how Angular Framework works.
 
 #### Have a look now to src folder
 
@@ -111,7 +117,7 @@ Same as before: please dedicate some time to analyse those files.
 <br/>
 
 ### Root Module
-We are going to analyse the **Root Module**.
+We are going to analyse now the **Root Module**.
 
 It is the main **Angular Module**. By default is called AppModule *app.module.ts* and loads the application and its dependencies.
 
@@ -404,3 +410,6 @@ And that's all for now. With this introduction we have revisited main concepts l
 [< Main Principles, Solid Practises and Code Quality](../boring-theory-2) | [Lab 02 - Angular Basics >](../lab-02)
 
 
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>

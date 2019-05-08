@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
+
 # Boring Theory. Chapter 2 - Main Principles, Solid Practises and Code Quality
 So, after the amazing Angular theory in the previous chapter, [see Boring Theory 1](https://github.com/Albarian/openathon-angular/tree/master/boring-theory-1
 ), think on the big subjects that always are left out: **testing**, **documentation**, **security**… 
@@ -215,8 +219,8 @@ After that acronyms indigestion it's important to remark now what Code Quality m
 You must define your own rules depending on your needs, but once they are defined, force compliance!
 Next is a list of a real project quality rules as an example:
 
-**Project *CWB*. All development tasks must follow the next rules:**
-- Apply the TypeScript coding guidelines: Microsoft Coding guidelines 
+**Project *CWB* (fictitious name). All development tasks must follow the next rules:**
+- Apply the TypeScript coding guidelines: [Microsoft Coding guidelines](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines). 
 - Use long and accuracy descriptive names, for classes, methods, constants, variables…
 - Comments will follow JSDoc conventions. Comment all methods and classes, also all specific piece of code that requires explanation for future revisits or because of complexity.
 - Create separate folders for each Ionic service group by logic.
@@ -244,3 +248,7 @@ At last, with all of that on mind, you can start coding!
 <br/>
 
 [< What is Angular?](../boring-theory-1) | [Lab 01 - Starting a New Angular Project >](../lab-01)
+
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>

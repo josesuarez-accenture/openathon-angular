@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
+
 # Lab 02 - Angular Basics
 ## Objectives and Outcomes
 This lab offers a quick introduction to Angular directives. Beside we'll look at how to display data from our components and allow the user to interact with the application throught an event.
@@ -387,4 +391,10 @@ After saving all the changes, the application should update the event details ac
 <br/>
 <br/>
 
-[< Back](../lab-01) | [Next >](../lab-03)
+[< Lab 01 - Starting a New Angular Project](../lab-01) | [Lab 03 - Routing Basics >](../lab-03)
+
+
+
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>

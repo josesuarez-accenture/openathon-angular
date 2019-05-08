@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="./resources/header.png">
+</p>
+
 # Boring Theory. Chapter 1 - What is Angular?
 
 This is the first **IV Openathon Custom Software Engineering** *"laboratory"*. 
@@ -206,9 +210,7 @@ Dart is an object-oriented, class defined, garbage-collected language using a C-
 
 # Angular Architecture
 In order to truly understand Angular we need to previously understand it's main concepts.
-But, firstly, have a break!
 
-![Rest now](./resources/comeback.png)
 
 ## SPAs
 A **[Single-Page Application](https://blog.angular-university.io/why-a-single-page-application-what-are-the-benefits-what-is-a-spa/)** is a web app **compiled to JavaScript** that dynamically renders sections of a page *without requiring a full reload from a server*.
@@ -322,3 +324,7 @@ After all of that:
 
 
 [< Home Page](../README.md) | [Main Principles, Solid Practises and Code Quality >](../boring-theory-2)
+
+<p align="center">
+    <img src="./resources/header.png">
+</p>

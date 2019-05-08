@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
+
 # Lab 03 - Routing Basics
 ## Objectives and Outcomes
 In this lab we will transform our aplication with a component-based navigation to a routing-based navigation. This feature will make that the app more web-like app and other goodness:
@@ -277,4 +281,9 @@ This interface is the Model in MVVM design patter. The reason behind creating a 
 <br/>
 <br/>
 
-[< Back](../lab-02) | [Next >](../lab-04)
+[< Lab 02 - Angular Basics](../lab-02) | [Lab 04 - Services >](../lab-04)
+
+
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>

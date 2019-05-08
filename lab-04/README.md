@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
+
 # Lab 04 - Services
 ## Objectives and Outcomes
 
@@ -404,4 +408,8 @@ Save all the changes, the application should display the event data now.
 <br/>
 <br/>
 
-[< Back](../lab-03) | [Next >](../lab-05)
+[< Lab 03 - Routing Basics](../lab-03) | [Lab 05 - Proof of Concept >](../lab-05) 
+
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
