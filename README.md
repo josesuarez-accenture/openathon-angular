@@ -69,66 +69,65 @@ This edition of the Openathon is divided in the following theory and laboratorie
 
 ## Prerequisites
 
-1. **Visual Studio Code**
+### 1. Visual Studio Code
 
-    <img src="./boring-theory-1/resources/vscode.png" width="100">
+<img src="./boring-theory-1/resources/vscode.png" width="100">
 
-
-    **Visual Studio Code** is a source code editor with support
+**Visual Studio Code** is a source code editor with support
     for debugging, embedded Git control, syntax
     highlighting, intelligent code completion, snippets, and code
     refactoring.
 
-    [Click here](https://code.visualstudio.com/) to download and install. **We recommend to use the LTS** version.
+[Click here](https://code.visualstudio.com/) to download and install. **We recommend to use the LTS** version.
 
 <br/>
 
-2. **Node.js**
+### 2. Node.js
 
-    <img src="./boring-theory-1/resources/node.png" width="180">
+<img src="./boring-theory-1/resources/node.png" width="180">
 
 
-    **Node.js** is a free, open source server environment that runs on
+**Node.js** is a free, open source server environment that runs on
     various platforms (Windows, Linux, Unix, Mac OS X, etc.) using
     the JavaScript runtime built on Chrome's V8 JavaScript engine.
 
-    [Click here](https://nodejs.org/en/download/) to download and install.
+[Click here](https://nodejs.org/en/download/) to download and install.
 
-    This installation will also install **npm**, the package manager
-    for Node.js and the world's largest software registry.
+This installation will also install **npm**, the package manager
+for Node.js and the world's largest software registry.
 
 <br/>
 
-3. **Angular CLI**
+### 3. Angular CLI
 
-    <img src="./boring-theory-1/resources/cli.png" width="300">
+<p>
+<img src="./boring-theory-1/resources/cli.png" width="300">
+</p>
+Open your terminal or command prompt and run:
 
-    Open your terminal or command prompt and run:
+```sh
+npm install -g @angular/cli
+```
 
-    ```sh
-    npm install -g @angular/cli
-    ```
-
-    **Angular CLI** is a command-line interface tool used to initialize, develop, scaffold, and maintain Angular applications.
-
-    [Click here](https://cli.angular.io/) to know more.
+**Angular CLI** is a command-line interface tool used to initialize, develop, scaffold, and maintain Angular applications.
+[Click here](https://cli.angular.io/) to know more.
     
-   > Depending on your computer and operating system, some dependencies will not be installed and you can get warnings during installation process. In the same terminal or a new one run: 
-   > ```sh
-   > ng v
-   > ```
-    > If everything is fine, a list of Angular CLI and Node version should appear.
+> Depending on your computer and operating system, some dependencies will not be installed and you can get warnings during installation process. In the same terminal or a new one run: 
+> ```sh
+> ng v
+> ```
+> If everything is fine, a list of Angular CLI and Node version should appear.
 
 <br/>
 
-4. **Angular Augury**
+### 4. Angular Augury
+<p>
+<img src="./boring-theory-1/resources/augury.png" width="140">
+</p>
 
-    <img src="./boring-theory-1/resources/augury.png" width="140">
+**Angular Augury** is a Chrome/Firefox DevTools extension for Angular. It allows you to inspect Angular component hierarchies in Chrome Developer Tools.
 
-    **Angular Augury** is a Chrome/Firefox DevTools extension for Angular. It allows you to inspect 
-    Angular component hierarchies in Chrome Developer Tools.
-
-    [Click here](https://augury.rangle.io/) to download and install.
+[Click here](https://augury.rangle.io/) to download and install.
 
 <br/>
 <br/>
