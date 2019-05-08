@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="./boring-theory-1/resources/header.png">
+</p>
+
 # IV Openathon Custom Open Cloud
 
 <p align="center">
@@ -10,8 +14,15 @@ again, we will have the opportunity to discover, in a practical way,
 the possibilities offered by the different architectures and leading
 frameworks in the market.
 
+<br/>
 
-## The target application: OpenEvents
+<p align="center">
+    <img src="./boring-theory-1/resources/cs.png" width="200">
+</p>
+
+<br/>
+
+## The target application: Open Events
 Final App definition / Features in this Openathon
 
 * Landing page: Intro and description. Shortcuts.
@@ -136,3 +147,7 @@ npm install -g @angular/cli
 
 
 [What is Angular? >](./boring-theory-1)
+
+<p align="center">
+    <img src="./boring-theory-1/resources/header.png">
+</p>
