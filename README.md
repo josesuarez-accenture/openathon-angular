@@ -60,7 +60,7 @@ And a simple navigation map would be:<br/>
 <br/>
 <br/>
 <p align="center">
-    <img src="./boring-theory-1/resources/NavMap.png" width="500">
+    <img src="./boring-theory-1/resources/NavMap.png" width="700">
 </p>
 <br/>
 <br/>
