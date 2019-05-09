@@ -59,7 +59,9 @@ Once **Open Events** solution is finished, it will be published as a tool for **
 And a simple navigation map would be:<br/>
 <br/>
 <br/>
-<img style="margin:50px 0" src="./resources/NavMap.png" width="580">
+<p align="center">
+    <img src="./boring-theory-1/resources/NavMap.png" width="500">
+</p>
 <br/>
 <br/>
 <br/>
