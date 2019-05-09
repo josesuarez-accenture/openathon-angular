@@ -40,8 +40,7 @@ Once **Open Events** solution is finished, it will be published as a tool for **
   * Home
   * Events
     * See events
-      * List (with filters as popular, last, location…)
-      * Calendar
+      * List (with filters as last, location…)
       * Event page selected with details
     * Find events (filters)
     * Create event (with categories)
@@ -56,8 +55,11 @@ Once **Open Events** solution is finished, it will be published as a tool for **
     * Edit profile
     * Delete profile
 
-
 <br/>
+And a simple navigation map would be:<br/>
+
+<img style="margin:50px 0" src="./resources/NavMap.png" width="580">
+
 
 ## Openathon IV Labs
 
