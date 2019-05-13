@@ -210,7 +210,7 @@ Edit app.component.html and add:
     <img src="./resources/eventList.png" border="1">
 </p>
 
-Import a new material component in app.model.ts
+Import a new material component in app.module.ts
 
 
 ```javascript
