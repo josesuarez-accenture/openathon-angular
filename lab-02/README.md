@@ -20,7 +20,7 @@ Directives	give	instructions	to	Angular	on	how	to	render	the	templates	to	the	DO
 
 
 ## Structural Directives
-Structural Directives allows you to change the view structure. In other words, it alters the layout by adding, replacen or removing elements in DOM. 
+Structural Directives allows you to change the view structure. In other words, it alters the layout by adding, replacing or removing elements in DOM. 
 * Examples of Structural Directives:
 
   ngIf 
@@ -43,12 +43,12 @@ There are four ways of data binding:
   {{color.name}}
 ```
 
-* **Property binding**  is also a one way binding from the data source to the view, allowing you to change value anytime at the component level. It defines and updates a variable's value in component and displays it in the view. You can make use of it using the square brackets '[ ]'.
+* **Property binding**  is also a one way binding from the data source to the view, allowing you to change value anytime at the component level. It defines and updates a variable's value in component and displays it in the view. Interpolation is a special syntax that Angular converts into property binding. You can make use of it using the square brackets '[ ]'.
 ```javascript
   [color] = "selectedColor"
 ```
 
-* **Event binding** is a one-way binding from  the view targe to the data source. For example it could be a button click, that calls a function. The event action is set between parentheses '( )'
+* **Event binding** is a one-way binding from the view to the data source. For example it could be a button click, that calls a function. The event action is set between parentheses '( )'
 ```javascript
  (buttonClick) = "changeColor()"
 ```
@@ -81,16 +81,20 @@ We can use more than one pipe at the same time as the following example that wou
 
 ```
 
+# Coding Time
 
+Now we are going to try to make use of some of these concepts in our applicacion. We are going to display an event list.
 
-Add a new component. 
+Add a new component named event-list 
 
 ```sh
 ng g component event-list
 
 ```
 
-Create a folder under app/src named ‘models’ then inside of it create a file named ‘event.ts’
+Now we are going to create the event model. In this file we are going to define the event's properties, it is basically a blueprint that will help us when we create new varibles of type event.
+
+Create a folder under src/app named ‘models’ then inside of it create a file named ‘event.ts’
 <p align="center">
     <img src="./resources/eventModelFolder.png" border="1">
 </p>
@@ -109,7 +113,8 @@ export class Event {
 
 ```
 
-Copy and paste the following code in event-list.ts
+Copy and paste the following code in event-list.component.ts. As you can see, we are importing our even model. And we make use of it in the 'EVENTS' constant, which is an array of events. Besides we create the 'selectedEvent' variable and set it to be by default the first value from the 'EVENTS' array.
+
 
 ```javascript
 import { Component, OnInit } from '@angular/core';
@@ -179,8 +184,8 @@ export class EventListComponent implements OnInit {
 }
  
 ```
-
-Delete the content from event-list.html and copy and paste the following code.
+In order to display the event list we will use the <a href="https://material.angular.io/components/list/overview">mat-list</a> component from Angular Material. 
+Delete the content from event-list.component.html and copy and paste the following code.
 
 ```javascript
 <div class="container">
@@ -210,8 +215,9 @@ Edit app.component.html and add:
     <img src="./resources/eventList.png" border="1">
 </p>
 
-Import a new material component in app.module.ts
 
+Now we will use <a href="https://material.angular.io/components/card/overview">'mat-card'</a> component to show the event details.
+Import the mat-card component in app.module.ts
 
 ```javascript
 import { MatCardModule } from '@angular/material/card';
@@ -222,7 +228,7 @@ import { MatCardModule } from '@angular/material/card';
   . . . 
 
 ```
-Edit event-list.component.html as following:
+Edit event-list.component.html to use mat-card and display the event details as following:
 
 ```javascript
 <div class="container">
@@ -386,6 +392,9 @@ After saving all the changes, the application should update the event details ac
 
 [Angular Pipes](https://angular.io/guide/pipes)
 
+[mat-list](https://material.angular.io/components/list/overview")
+
+[mat-card](https://material.angular.io/components/card/overview")
 
 <br/>
 <br/>
