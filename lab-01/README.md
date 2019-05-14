@@ -5,7 +5,7 @@
 # Lab 01 - Starting a New Angular Project
 
 
-Did if you skip the theory? Please check:
+Did you skip the theory? Please check:
 - [What is Angular?](../boring-theory-1)
 - [Main Principles, Solid Practises and Code Quality](../boring-theory-2)
 
@@ -101,7 +101,7 @@ We have marked the main elements like configurations files for TSLint, TypeScrip
 - **tsconfig.json**: configures and customize the compiler options. Remembar that TypeScript is *"compiled"* to uggly-JavaScript.
 - **tslint.json**: default TSLint configuration for apps in the workspace.
 
-> We recommend to dedicate some time to check those files and folders. It's important to understand how Angular Framework works.
+> We recommend to spend some time to check those files and folders. It's important to understand how Angular Framework works.
 
 #### Have a look now to src folder
 
@@ -112,7 +112,7 @@ We have marked the main elements like configurations files for TSLint, TypeScrip
 > Do you remember the old times main.c or main.java?
 In Angular we have **main.ts** :) and **index.html**
 
-Same as before: please dedicate some time to analyse those files.
+Same as before: please spend some time to analyse those files.
 
 <br/>
 
@@ -151,7 +151,7 @@ There are four main types:
 
 Remember: [Angular Components](../boring-theory-1##Components).
 
-When Angular Project Wizard creates the project, a component is created for us. Now we will create our first own component for the landing page we want to customise, using the Angular CLI:
+When Angular Project Wizard creates the project, a component is created for us. Now we will create our first own component for the landing page we want to customise, using the Angular CLI. Open the terminal and navigate to our folder **open-events-folder** to execute the following:
 
 ```sh
 ng generate component landing-page
@@ -193,9 +193,7 @@ Open the file landing-page.component.ts:
 
 Finally, notice the declaration of the **TypeScript component Class**: *LandingPageComponent*. 
 
-When we created the component, we supplied *landing-page* as the name and when we created the project, we supplied **oevents** as the prefix. Angular Cli used that information to compose the component name: **oevents**-*landing-page*. 
-Also, the class name is the the Camel Case for *landing-page* with *Component* at the end.
-
+Remember that when we've created the project we specified the '**oevents**' prefix. This prefix will be used by the Angular Cli to compose the component selector names. As we can see in this particular case, we have created the 'landing-page' component and if you check the landing-page.component.ts file, you will see that the selector name is '**oevents-landing-page**'. In addition in this file we can see that Angular Cli uses the UpperCamelCase or PascalCase style to name the class '**LandingPageComponent**'.
 
 ### Changing the view
 It's fine to have a default view but we want to adapt it to our needs.
@@ -322,7 +320,7 @@ Now let’s add a toolbar in our application. Create a new component named **too
 ```
 This command creates the new component, creates the folder *toolbar** and puts all the components files on it. As well, it imports and adds the component to the declaration section in  *app.module.ts* file.
 
-Now, edit *toolbar/toolbar.component.html* and add the following:
+Now, edit *toolbar/toolbar.component.html* and delete its content and add the following:
 ```javascript
 <mat-toolbar>
   <a mat-button>Home</a>
