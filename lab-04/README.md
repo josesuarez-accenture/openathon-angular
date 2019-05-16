@@ -349,7 +349,7 @@ JSON-server gives us a very simple way to create a REST API server. It is a node
 npm install json-server -g 
 ```
 * Confiure the json-server. Choose one location in your computer and create a new folder called 'json-server'. Then go to this 
- <a htef="./db.json"> Donwnload db.json file </a> and move it into the folder that we just have created. 
+ <a href="./db.json">Donwnload db.json file </a> and move it into the folder that we just have created. 
  
 * Open the comand line and go into the json-server folder. Now we are going to run our server with the following command: 
 
