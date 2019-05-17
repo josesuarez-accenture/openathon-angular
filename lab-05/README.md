@@ -476,6 +476,191 @@ form {
     this.router.navigate(["/events"]);
   }
   ...
+  ```
 
 
 Save all the changes. Te application should allow you to delete events now.
+
+
+## Login and Signup
+
+Now, we're going to introduce an important angular functionality : *router guards*. Before we nee to finish the two last menu options  (login and profile). The first is an important and usually complex process witch include the signup process. We will make it in order to better explain the *route guards* functionality as this is one of the main functionalities where the "route guards" are applied.
+
+To do it easier we won't implement the real login/signup process instead we are going to create a simple collection in our db.json where we will save our users locally. 
+
+> **_Side Note:_** The real process implies a backend and other concepts server-side related (tokens, federations, identities...), so we will leave this for other future Openathons.
+
+We already have the login component and his route but not the signup component (and his route). Since the signup is a one-time process related with the login process, we are going to create the signup component inside the login folder. Do you remember how do it?...
+
+If you've done well two things happened: 
+* The creation of a new *signup* folder inside *login* folder (please check it yourself).
+* A new import inside *login.module.ts* which looks like:
+
+```javascript
+//Modules
+import { SharedModule } from "../shared/shared.module"; //<-- NEW
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+
+//Components
+import { LoginComponent } from './login.component';
+import { SignupComponent } from './signup/signup.component'; //<-- NEW
+
+@NgModule({
+  declarations: [
+    LoginComponent, 
+    SignupComponent //<-- NEW
+    ],
+  imports: [
+    CommonModule,
+    SharedModule //<-- NEW
+  ]
+})
+export class LoginModule { }
+```
+
+In this file, one more thing happened. In order to have access to other components from SharedModule (as Angular Material) we've imported the SharedModule too.
+
+Although the login/signup process is simple in our app (and ready only for local development), if you don't have experience it can be a bit messy so the following steps will be explained little by little.
+
+### User Service
+
+As the best practices said... we are going to create a new service to manage the user data from our API and be able to inject it into the components that need it.
+
+```bash
+ng g service core/user 
+```
+
+We will need the next methods:
+
+* signup: To register a new user.
+* login: To login into the app.
+* logout: To logout.
+* checkUser: To check if we are logged when we need to know it.
+
+The mechanics of these methods to communicate with the API is the same as we seen in event.service through the Angular built-in HttpClient service. In some responses we've added a *map* rxjs operator in order to manage this response before we passed it to the observers (components in our case) which consume it. For example in this piece of code from the login method:
+
+```javascript
+...
+map(us => {
+  if(us[0].email) {
+    localStorage.setItem("user", JSON.stringify(us[0]));
+    this.setUser();
+    return us[0].password === user.password ? us[0] : 'Password not valid.'
+  }
+})
+...
+```
+
+We're taking the server response and if this response has a *email* property we are sure that the response is correct and we save the user in the local storage (to use it when and where we want). After, we run the *setUser* method to set the *isAutheticated* variable according to the result (true if all is good) and be able to return this variable when someone ask us for the authentication of the user through public method *checkUser* method. 
+
+> **_Side Note:_**  Note that *setUser* method is private as we only need it in this service but *checkUser* is exposed to other components where we inject this service and we need it as public.
+
+Like in the event service we create a *handleError* method. Please study the signup method, we are sure that you can understand it :)
+
+At the end the service have to be like this:
+
+```javascript
+import { Injectable } from "@angular/core";
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders
+} from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { catchError, retry, map } from "rxjs/operators";
+import { environment } from "../../environments/environment";
+import { User } from "../models/user";
+
+@Injectable({
+  providedIn: "root"
+})
+export class UserService {
+  constructor(private http: HttpClient) {}
+  isAuthenticated: boolean;
+
+  signup(user: User): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+
+    return this.http
+      .post(environment.apiURL + "users/", user, { headers })
+      .pipe(
+        retry(3),
+        map(r => {
+          localStorage.setItem("user", JSON.stringify(r));
+          this.setUser();
+        }),
+        catchError(this.handleError)
+      );
+  }
+
+  login(user: User): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+
+    return this.http.get(environment.apiURL + "users?email="+user.email, { headers }).pipe(
+      retry(3),
+      map(us => {
+        if(us[0].email) {
+          localStorage.setItem("user", JSON.stringify(us[0]));
+          this.setUser();
+          return us[0].password === user.password ? us[0] : 'Password not valid.'
+        }
+      }),
+      catchError(this.handleError)
+    );
+  }
+
+  logout() {
+    localStorage.setItem("user", '');
+    return false;
+  }
+
+  checkUser(): boolean {
+    this.setUser();
+    return this.isAuthenticated;
+  }
+
+  private setUser() {
+    this.isAuthenticated = localStorage.getItem("user") ? true : false;
+  }
+
+  // Error handling
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error("An error occurred:", error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` + `body was: ${error.error}`
+      );
+    }
+    // return an observable with a user-facing error message
+    return throwError("Something bad happened; please try again later.");
+  }
+}
+```
+
+Now, like we did with the event data we nee to create a data model for the *User*. Note that we already imported it into the *user.service.ts*.
+
+```bash
+ng g interface models/user
+```
+
+wit this properties:
+
+```javascript
+export interface User {
+  id: string;
+  email: string;
+  password: string;
+}
+```
+
