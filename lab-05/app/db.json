@@ -41,16 +41,5 @@
       "addedBy": "user01"
     }
   ],
-  "users": [
-    {
-      "email": "javirbh@gmail.com",
-      "password": "javi",
-      "id": 1
-    },
-    {
-      "email": "pedro@gmail.com",
-      "password": "pedro",
-      "id": 2
-    }
-  ]
+  "users": []
 }

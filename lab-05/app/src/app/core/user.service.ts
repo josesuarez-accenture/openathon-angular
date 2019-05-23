@@ -61,7 +61,7 @@ export class UserService {
     return this.isAuthenticated;
   }
 
-  setUser() {
+  private setUser() {
     this.isAuthenticated = localStorage.getItem("user") ? true : false;
   }
 

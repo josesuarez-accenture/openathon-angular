@@ -34,7 +34,6 @@ export class SignupComponent implements OnInit {
     this.user = this.signupForm.value;
 
     this.userService.signup(this.user).subscribe((event: Event) => {
-      this.signupForm.reset();
       this.router.navigate(["/events"]);
     });
   }
