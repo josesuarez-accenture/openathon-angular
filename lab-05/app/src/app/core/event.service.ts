@@ -56,7 +56,7 @@ export class EventService {
     });
 
     return this.http
-      .put(environment.apiURL + "events/", event, { headers })
+      .put(environment.apiURL + "events/" + event.id, event, { headers })
       .pipe(
         retry(3),
         catchError(this.handleError)

@@ -229,7 +229,7 @@ getEvent(id: number): Observable<any> {
 ** Now we are going to create a new component that will allow us to add and edit events. In order to achieve both operation reusing the same tamplate, we will be passing the event id parameter through the URL when editing an event and fill the form with the event details. Contrarily when we will be adding a new event we wil pass an empty/null event id. In that case the from's fields will be empty and the user will need to complete it with te new event to add. 
 
 
-* Edit the event.service.ts and add a new method 'addEvent' that will save our event in the db using the POST method.
+* Edit the event.service.ts and add the methods 'addEvent' and 'updateEvent'that will save our event in the db using the POST method or update the event using the PUT method.
 
 ```javascript
  addEvent(event: Event): Observable<any> {
@@ -239,6 +239,19 @@ getEvent(id: number): Observable<any> {
 
     return this.http
       .post(environment.apiURL + "events/", event, { headers })
+      .pipe(
+        retry(3),
+        catchError(this.handleError)
+      );
+  }
+
+   updateEvent(event: Event): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+
+    return this.http
+      .put(environment.apiURL + "events/" + event.id, event, { headers })
       .pipe(
         retry(3),
         catchError(this.handleError)
@@ -348,7 +361,8 @@ export class AddEditEventComponent implements OnInit {
         location: this.event.location,
         date: this.event.date,
         description: this.event.description,
-        addedBy: this.event.addedBy
+        addedBy: this.event.addedBy,
+        id: this.event.id
       });
     } else {
       this.addEditForm = this.fb.group({
@@ -356,7 +370,8 @@ export class AddEditEventComponent implements OnInit {
         location: "",
         date: "",
         description: "",
-        addedBy: ""
+        addedBy: "",
+        id: ""
       });
     }
   }
