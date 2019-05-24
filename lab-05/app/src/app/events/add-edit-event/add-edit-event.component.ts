@@ -42,7 +42,8 @@ export class AddEditEventComponent implements OnInit {
         location: this.event.location,
         date: this.event.date,
         description: this.event.description,
-        addedBy: this.event.addedBy
+        addedBy: this.event.addedBy,
+        id: this.event.id
       });
     } else {
       this.addEditForm = this.fb.group({
@@ -50,7 +51,8 @@ export class AddEditEventComponent implements OnInit {
         location: "",
         date: "",
         description: "",
-        addedBy: ""
+        addedBy: "",
+        id: ""
       });
     }
   }
