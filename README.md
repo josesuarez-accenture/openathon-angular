@@ -26,7 +26,7 @@ frameworks in the market.
 
 **Open Events** is a solution that will allow us to register and retrieve the different technology events that are interesting for the **CSE Communities**. 
 
-The **Frontend component** will be developed using **Angular**. We are going to learn step by step during the next laboratories not only Angular theory but general **Architecture Good Practises** and **Main Principles**.
+The **Frontend component** will be developed using **Angular**. We are going to learn step by step during the next laboratories not only Angular theory but general **Architecture Good Practices** and **Main Principles**.
 
 We will finish with a fully working Webapp using mocked data waiting for the solution **Backend** counterpart that will be the subject for the **V Openathon**.
 
@@ -73,7 +73,7 @@ This edition of the Openathon is divided in the following theory and laboratorie
 | Lab                                 | Title                                      |
 |-------------------------------------|--------------------------------------------|
 | [Boring Theory. Chapter 1](/boring-theory-1)                | What is Angular                            |
-| [Boring Theory. Chapter 2](/boring-theory-2)           | Main Principles, Solid Practises and Code Quality           |
+| [Boring Theory. Chapter 2](/boring-theory-2)           | Main Principles, Solid Practices and Code Quality           |
 | Lab 1                | Starting a New Angular Project             |
 | Lab 2                | Angular Basics                             |
 | Lab 3                | Routing Basics                            |
