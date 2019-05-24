@@ -1287,3 +1287,13 @@ The profile.component.scss file;
 
 
 > **_Side Note:_** Don't worry about the app look and feel. We will make a complete re-styling in the future.
+
+<br/>
+<br/>
+<br/>
+
+[< Lab 04 - Services](../lab-04) | [Lab 06 - Central State management >](../lab-06) 
+
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>

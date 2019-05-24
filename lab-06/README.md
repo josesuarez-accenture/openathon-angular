@@ -121,3 +121,16 @@ We export the constant and the class since we will need in the *Reducer* as you 
 The third export it's a type alias from typescript (basically it's used to give another name to a type) and we will need in the *Reducer* too to can discriminate the action type (in a *switch* statement). 
 
 > **_Side Note:_** If you want to understand the Typescript's discriminate unions you can read <a target="_blank" href="https://basarat.gitbooks.io/typescript/docs/types/discriminated-unions.html">this</a>.
+
+
+
+
+<br/>
+<br/>
+<br/>
+
+[< Lab 05 - Routing 2 and CRUD](../lab-05)
+
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
