@@ -14,7 +14,7 @@ Moreover, we are going to see how to send parameters through routing and how to 
 
 ## Read Event Details
 
-Let's refactor our event list and details to a more proper way. We are going to split them, first we will use a table for the event list using mat-table from Angular Material. When the user clicks in one event we will be using routerLink to redirect them to the a new event details view 
+Let's refactor our event list and details to a more proper way. We are going to split them, first we will use a table for the event list using mat-table from Angular Material. When the user clicks in one event we will be using routerLink to redirect them to the new event details view 
 
 * Add the MatTableModule from Material in the shared.module.ts
 
@@ -281,14 +281,35 @@ import { Event } from "../models/event";
   }
 ```
 
-* Create a new component named add-edit-event
+* Add the MatFormFieldModule and MatInputModule from Material in the shared.module.ts
 
 ```javascript
- ng g component add-edit-event
+...
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+...
+ imports: [
+	...
+	MatFormFieldModule,
+  MatInputModule
+  ],
+  ...
+ exports: [
+  ...
+  MatFormFieldModule,
+  MatInputModule
+  ]
+  ...
+```
+
+* Create a new component named add-edit-event inside events
+
+```javascript
+ ng g component events/add-edit-event
 ```
 
 
-* Copy and paste the following code in add-edit-event.component.html. As you can see we are using a form an the <a href="https://material.angular.io/components/form-field/overview">mat-form-field</a> form Ancular Material. The form is linked to 'addEditForm', a variable of type FormGroup declared in the controller, that will share its properties with the form fields throught the formControlName. Furthermore we have the 'save' button that will submit the form.
+* Copy and paste the following code in add-edit-event.component.html. As you can see we are using a form an the <a href="https://material.angular.io/components/form-field/overview">mat-form-field</a> form Angular Material. The form is linked to 'addEditForm', a variable of type FormGroup declared in the controller, that will share its properties with the form fields through the formControlName. Furthermore, we have the 'save' button that will submit the form.
 
 ```javascript
 <div class="container">
@@ -443,7 +464,7 @@ form {
 
 
 
-* In event-list.component.html add a button that will redirect to add event view. As we said before, we'll pass and empty string as the paramater because in this case we are creating a new event.
+* In event-list.component.html add a button that will redirect to add event view. As we said before, we'll pass and empty string as the parameter because in this case we are creating a new event.
 
 ```javascript
 <div class="container">
@@ -454,6 +475,17 @@ form {
   </div>
   ...
 ```
+* Add the addEditEvent route in app-routing.module.ts
+```javascript
+import { AddEditEventComponent } from "./events/add-edit-event/add-edit-event.component";
+...
+const routes: Routes = [
+  ...
+  { path: "eventDetails/:id", component: EventDetailsComponent },
+  { path: "addEditEvent/:id", component: AddEditEventComponent },
+  ...
+```
+
 
 
 * Save all the changes and try it out. You should be able to create and edit events. 
@@ -497,6 +529,9 @@ form {
 
 ```javascript
 ...
+import { Router } from "@angular/router";
+
+...
  ngOnInit() {
     const id = this.route.snapshot.params["id"];
     this.eventService.getEvent(id).subscribe((event: Event) => {
@@ -516,12 +551,12 @@ form {
   ```
 
 
-Save all the changes. Te application should allow you to delete events now.
+Save all the changes. The application should allow you to delete events now.
 
 
 ## Login and Signup
 
-Now, we're going to introduce an important angular functionality : *router guards*. Before we nee to finish the two last menu options  (login and profile). The first is an important and usually complex process witch include the signup process. We will make it in order to better explain the *route guards* functionality as this is one of the main functionalities where the "route guards" are applied.
+Now, we're going to introduce an important angular functionality: *router guards*. Before we need to finish the two last menu options  (login and profile). The first is an important and usually complex process which include the signup process. We will make it in order to better explain the *route guards* functionality as this is one of the main functionalities where the "route guards" are applied.
 
 To do it easier we won't implement the real login/signup process instead we are going to create a simple collection in our db.json where we will save our users locally. 
 
@@ -590,7 +625,7 @@ map(us => {
 ...
 ```
 
-We're taking the server response and if this response has a *email* property we are sure that the response is correct and we save the user in the local storage (to use it when and where we want). After, we run the *setUser* method to set the *isAutheticated* variable according to the result (true if all is good) and be able to return this variable when someone ask us for the authentication of the user through public method *checkUser* method. 
+We're taking the server response and if this response has an *email* property we are sure that the response is correct and we save the user in the local storage (to use it when and where we want). After, we run the *setUser* method to set the *isAutheticated* variable according to the result (true if all is good) and be able to return this variable when someone ask us for the authentication of the user through public method *checkUser* method. 
 
 > **_Side Note:_**  Note that *setUser* method is private as we only need it in this service but *checkUser* is exposed to other components where we inject this service and we need it as public.
 
