@@ -14,7 +14,7 @@ Moreover, we are going to see how to send parameters through routing and how to 
 
 ## Read Event Details
 
-Let's refactor our event list and details to a more proper way. We are going to separete them, first we will use a table for the event list using mat-table from Angular Material. When the user clicks in one event we will be using routerLink to redirect them to the a new event details view 
+Let's refactor our event list and details to a more proper way. We are going to split them, first we will use a table for the event list using mat-table from Angular Material. When the user clicks in one event we will be using routerLink to redirect them to the a new event details view 
 
 * Add the MatTableModule from Material in the shared.module.ts
 
@@ -26,6 +26,11 @@ import { MatTableModule } from "@angular/material/table";
 	...
 	MatTableModule
   ],
+  ...
+exports: [
+    ...
+    MatTableModule,
+    ...
 ```
 
 * Edit event-list.component.html
@@ -87,7 +92,7 @@ table {
 }
 ```
 
-* Add the columns names that will be displayed in the table headers. In event-list.component change the code as follow:
+* Add the columns names that will be displayed in the table headers. In event-list.component.ts change the code as follow:
 
 
 ```javascript
@@ -115,6 +120,18 @@ const routes: Routes = [
 
 ```javascript
 import { RouterModule } from "@angular/router";
+...
+  imports: [
+    ...
+    RouterModule,
+    ...
+    ]
+    ...
+  exports:[
+    ...
+    RouterModule,
+    ...
+  ]
 ```
 
 
@@ -174,6 +191,21 @@ import { RouterModule } from "@angular/router";
 
 ```
 
+* Add a new method in event-service to get the event using the GET method.
+
+```javascript
+getEvent(id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+
+    return this.http.get(environment.apiURL + "events/" + id, { headers }).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+```
+
 * We are going to get the parameter id from the URL and using our event service to get the especific event from the db. 
 
 event-details.component.ts
@@ -206,32 +238,22 @@ export class EventDetailsComponent implements OnInit {
 }
 ```
 
-* Add a new method in event-service to get the event using the GET method.
-
-```javascript
-getEvent(id: number): Observable<any> {
-    const headers = new HttpHeaders({
-      "Content-Type": "application/json"
-    });
-
-    return this.http.get(environment.apiURL + "events/" + id, { headers }).pipe(
-      retry(3),
-      catchError(this.handleError)
-    );
-  }
-```
 
 * Save all the changes that we have made. You should be able to get the event list and click in one of them and see its details in a new view.
 
 
 ## Create And Update An Event
 
-** Now we are going to create a new component that will allow us to add and edit events. In order to achieve both operation reusing the same tamplate, we will be passing the event id parameter through the URL when editing an event and fill the form with the event details. Contrarily when we will be adding a new event we wil pass an empty/null event id. In that case the from's fields will be empty and the user will need to complete it with te new event to add. 
+** Now we are going to create a new component that will allow us to add and edit events. In order to achieve both operation reusing the same template, we will be passing the event id parameter through the URL when editing an event and fill the form with the event details. Contrarily when we will be adding a new event we will pass an empty/null event id. In that case the from fields will be empty and the user will need to complete it with the new event to add. 
 
 
 * Edit the event.service.ts and add the methods 'addEvent' and 'updateEvent'that will save our event in the db using the POST method or update the event using the PUT method.
 
 ```javascript
+
+import { Event } from "../models/event";
+...
+
  addEvent(event: Event): Observable<any> {
     const headers = new HttpHeaders({
       "Content-Type": "application/json"
