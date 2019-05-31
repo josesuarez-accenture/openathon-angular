@@ -625,13 +625,13 @@ map(us => {
 ...
 ```
 
-We're taking the server response and if this response has an *email* property we are sure that the response is correct and we save the user in the local storage (to use it when and where we want). After, we run the *setUser* method to set the *isAutheticated* variable according to the result (true if all is good) and be able to return this variable when someone ask us for the authentication of the user through public method *checkUser* method. 
+We're taking the server response and if this response has an *email* property we are sure that the response is correct and we save the user in the local storage (to use it when and where we want). After, we run the *setUser* method to set the *isAuthenticated* variable according to the result (true if all is good) and be able to return this variable when someone ask us for the authentication of the user through public method *checkUser* method. 
 
 > **_Side Note:_**  Note that *setUser* method is private as we only need it in this service but *checkUser* is exposed to other components where we inject this service and we need it as public.
 
 Like in the event service we create a *handleError* method. Please study the signup method, we are sure that you can understand it :)
 
-At the end the service have to be like this:
+At the end the service has to be like this:
 
 ```javascript
 import { Injectable } from "@angular/core";
@@ -720,7 +720,7 @@ export class UserService {
 }
 ```
 
-Like the *event* service (and all services) we have to declarate it in a module, the *core* module in our case which is the module we've created to gather all services.
+Like the *event* service (and all services) we have to declare it in a module, the *core* module in our case which is the module we've created to gather all services.
 
 ```javascript
 import { NgModule } from "@angular/core";
@@ -744,7 +744,7 @@ Now, like we did with the event data we nee to create a data model for the *User
 ng g interface models/user
 ```
 
-with this properties:
+with this property:
 
 ```javascript
 export interface User {
@@ -1120,7 +1120,7 @@ To complete the work we need change the *toolbar.component.html* view:
 
 We've changed the *login* link and added the email/logout link. They are alternatively showed depending of the *isAuthenticated* variable from the previously seen *toolbar.component.ts*.
 
-There is a event binding *(click)* to run the *logout()* method in *toolbar.component.ts* when the user do click on it.
+There is an event binding *(click)* to run the *logout()* method in *toolbar.component.ts* when the user do click on it.
 
 With this we already have the complete desired functionality.
 
@@ -1128,11 +1128,11 @@ In the next section we're going to implement the authorization part to grant or 
 
 ## Route Guards
 
-We're interesting in deny the events creation and edition to the users not logged in. The best practices state that this have to be done in both backend and frontend. We will do in the frontend denying navigation to these views if the user is not logged in.
+We're interested in deny the events creation and edition to the users not logged in. The best practices state that this has to be done in both backend and frontend. We will do in the frontend denying navigation to these views if the user is not logged in.
 
 To do this Angular has the Route Guards which control the navigation depending of the returned value from them (true or false). There are several guards to use depending of the scenario we have. We will use the most common which is *CanActivate*.
 
-If you remember the *app-routing.module.ts* the routes consist in objects with some properties, so far two: *path* and *component*, but there are more and one of then is the *canActivate* property which say "when we navigate to this route, first of all check this method (the guard method) and if the returned value from it is *false* deny the navigation to the view".
+If you remember the *app-routing.module.ts* the routes consist in objects with some properties, so far two: *path* and *component*, but there are more and one of them is the *canActivate* property which say "when we navigate to this route, first of all check this method (the guard method) and if the returned value from it is *false* deny the navigation to the view".
 
 We will set up the guard in a different file named *auth-guard.service.ts" which have to be imported to the routing module to be used (as always we do). The *app-routing.module.ts* will be now:
 
@@ -1209,7 +1209,7 @@ export class AuthGuard implements CanActivate {
 }
 ```
 
-We realize that is a service injectable (note *@Injectable*) and that we have to implement a interface mandatory for the *canActivate* guards:
+We realize that is a service injectable (note *@Injectable*) and that we have to implement an interface for the *canActivate* guards:
 
 ```javascript
 ...
@@ -1217,7 +1217,7 @@ export class AuthGuard implements CanActivate {
 ...
 ```
 
-This interface forces us to implement a method named *canActivate()* which in our case will return a boolena depending of the result of the *checkLogin* method. This method use the *UserService* service to check in the user is logged in through *checkUser* (which we already know). If the checking is false we send the user to the *login* view but if the result is true we return the *true* value to the routing and the view can be showed.
+This interface forces us to implement a method named *canActivate()* which in our case will return a boolena depending of the result of the *checkLogin* method. This method uses the *UserService* service to check in the user is logged in through *checkUser* (which we already know). If the checking is false we send the user to the *login* view but if the result is true we return the *true* value to the routing and the view can be showed.
 
 > **_Side Note:_** The <a href="https://angular.io/api/router/CanActivate" target="_blank">CanActivate</a> interface has a signature with several arguments and ca be more complex depending of our context. In this case we are using the basic needed for us.
 
