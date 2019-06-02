@@ -830,6 +830,11 @@ In this point our new architecture is:
     <img src="./resources/CentralStateEffects.png" width="1200">
 </p>
 
+Now, you can try our new functionality to filter the events created by you. Remember to create some new event to take into account the new property modified in our User model and the filter works correctly.
+
+
+
+
 <br/>
 <br/>
 <br/>
