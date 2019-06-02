@@ -122,6 +122,221 @@ The third export it's a type alias from typescript (basically it's used to give 
 
 > **_Side Note:_** If you want to understand the Typescript's discriminate unions you can read <a target="_blank" href="https://basarat.gitbooks.io/typescript/docs/types/discriminated-unions.html">this</a>.
 
+Now the reducer, where the state change happens when an action is launched:
+
+```javascript
+import * as login from './login.actions';
+
+export interface State {
+  logged: boolean;
+}
+
+export const initialState: State = {
+  logged: false
+}
+
+export function reducer(state: State = initialState, action: login.Actions): State {
+  switch (action.type) {
+    case login.LOGGED:
+      return {
+        ...state,
+        logged: action.payload
+      }
+
+    default:
+      return state;
+  }
+}
+```
+
+First, we import all exported members from *login.actions.ts*, after that, we define our state for login slice as a interface with the *logged* property which we want to check.
+
+> **_Side Note:_** Slice is  the name to refer to a portion of state. Remember that the state is one and unique, we only split it to make it more manageable.
+
+Since we have to set up a initial state to the store, we define a constant (*State* type) with a initial value (*false*).
+
+After that we create the reducer function which will make the work to change the state depending of the action. We manage this with a *switch* statement as we said before.
+
+The reducer function always has two arguments: *state* and *action*. The first is our state whit a initial value stated and the second is the action launched and which we are constantly hearing (thanks to the observables and the RxJs library). Inside the function we select the kind of action, if this action a *logon.LOGGED* type we set up the *logged* property form our state to a new value, the one which the *payload* property from the action brings.
+
+> **_Side Note:_** Here we can see the Typescript's discriminate unions in action. Note how we're typing the *action* argument of the reducer function: as *login.Actions* and not as *login.Logged* (from *Logged* action class). This way we always export/import the *type Actions" for all our state slices and Typescript discriminate the type internally.
+
+At the end we return a copy from the previous state. Now any part of our app interested to hear the *logged* variable can to subscribe to the store and react to this change which we are going to see soon.
+
+Now we need to say to the app that we are going to use a central store and, of course, we also need to subscribe to the store in order to hear the changes and react. As we said before we will gather the store's slices in a file named *app.store.ts* placed in *app* folder. This file, at the end, have to be imported from *app.module.ts* to indicate to the app to use this store.
+
+```javascript
+//app.store.ts
+
+import { ActionReducerMap } from '@ngrx/store';
+
+import * as loginReducer from './store/login/login.redux';
+
+
+export interface State {
+  login: loginReducer.State;
+}
+
+export const reducers: ActionReducerMap<State> = {
+  login: loginReducer.reducer
+}
+```
+
+We use the *ActionReducerMap* type to map our loginReducer, From this point our store slice to login will be named in the app as *login* and we call it with this name. Also we specify the type with an interface. We exports it as *reducers* and we import it from *app.module.ts* to integrate our store with the app using the AtoreModule of ngrx.
+
+
+```javascript
+//app.module.ts
+
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+
+// Modules
+import { CoreModule } from "./core/core.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { SharedModule } from "./shared/shared.module";
+
+import { EventsModule } from "./events/events.module";
+import { LoginModule } from "./login/login.module";
+import { ProfileModule } from "./profile/profile.module";
+
+// State Management
+import { StoreModule } from '@ngrx/store'; // <-- NEW
+import { reducers } from './app.store'; // <-- NEW
+
+// Components
+import { AppComponent } from "./app.component";
+import { LandingPageComponent } from "./landing-page/landing-page.component";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LandingPageComponent,
+    ToolbarComponent,
+    PageNotFoundComponent
+  ],
+  imports: [
+    CoreModule,
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    EventsModule,
+    LoginModule,
+    ProfileModule,
+    StoreModule.forRoot(reducers) // <-- NEW
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+At this moment we have the app listening to actions of type *login* and when this occur, the store will change our state automatically and will emit this new store to other subscribers. To do this in the login process first we will do that our app dispatch an action when the user is set up and after we will subscribe to this action in the parts of the app we want to manage the login.
+
+The are two places where we will dispatch the action: when we start the app in order to know if we already logged in, and when the user logged in manually (inside the user service).
+
+The first one happens in the *app.component.ts*, the first component our app create.
+
+```javascript
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as login from './store/login/login.actions';
+import { UserService } from "./core/user.service";
+
+@Component({
+  selector: 'oevents-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'open-events-front';
+
+  constructor(
+    private userService: UserService,
+    private store: Store<any>
+  ) {
+    this.userService.checkUser() ? this.store.dispatch(new login.Logged(true)) : this.store.dispatch(new login.Logged(false))
+   }
+}
+```
+
+First we nee to import the Store class (which extends from a Observable) which give us the *dispatch* method. We also need our actions and the UserService to ask it about the login of the user. After that, in the constructor we inject both the UserService and the Store class and we check in the user is logged in through the *checkUser* method. If it's true we dispatch a new action of type Logged with the payload "true", otherwise we dispatch the action with the "false" payload.
+
+Now is moment to take a look to the *login.redux.ts*. This action dispatched are listened from this file, our reducer, and you can see in it that we check the type action and if it's a *login.LOGGED* type we change the state with the a new *logged* property with value equal to the payload from the action. 
+
+But where will this new state be listen from? The response is  from where we want the action change our app. In our app, form the menu tool bar since it's the place where our app react to the login action changing the layout (login/logout menu link). The *toolba.component.ts* will be:
+
+```javascript
+import { Component, OnDestroy } from '@angular/core';
+import { User } from "../models/user";
+import { UserService } from "../core/user.service";
+import { Router } from "@angular/router";
+import { SubscriptionLike } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import * as login from '../store/login/login.actions';
+
+@Component({
+  selector: 'oevents-toolbar',
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.scss']
+})
+export class ToolbarComponent {
+  user: User;
+  isAuthenticated: boolean;
+  subscriptionLogin: SubscriptionLike;
+
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private store: Store<any>
+  ) {
+    this.subscriptionLogin = store.pipe(select('login')).subscribe(state => {
+      if (state) {
+        this.isAuthenticated = state.logged;
+
+        if(this.isAuthenticated) {
+          this.user = JSON.parse(localStorage.getItem("user"));
+        }
+      }
+    })
+   }
+
+  logout() {
+    this.userService.logout();
+    this.store.dispatch(new login.Logged(false));
+    this.router.navigate(["/home"]);
+  }
+
+  ngOnDestroy() {
+    this.subscriptionLogin.unsubscribe()
+  }
+}
+```
+
+We will subscribe to the store from de constructor typically. To do this we need to *select* our state slice *login* and subscribe to it through a *pipe* method of the store class. With this we always are subscribe to the store from the component is started. This means that the component is listening for changes after even destroyed. To avoid this behaviour (normally not desired) we save the subscription in a variable *subscriptionLogin* in order to use it  in the destroy process, that is, the *ngOnDestroy* hook of our component.
+
+Inside the subscription we check the *state.logged* (we already know this property from our reducer) and if it's true we set up our *user*.
+
+Also we need to dispatch an action to logout so we do it in the *logout* method (when the user click the logout link) dispatching our *Logged* action whit the "false" payload. Note that this, again, will trigger the store mechanism again and will emit a new state of the stare tat our subscribers will listen again.
+
+
+## Filter events with *Effects*
+
+We have already cited something about *effects*. This is the next important thing about a central store and is the other place where the actions are listening apart of the reducers. 
+
+To understand this we first need to understand the *immutability* and *side effects*. This is out of our scope in this lab but these are important programming concepts in general (not javascript thing). What you need know now about this is that normally you want to avoid side effects in your applications, that is whatever that have a impact out of the current scope. For example a method that is changing variables out of his scope is a side effect and usually this is wrong because you are losing control of your app. 
+
+> **_Side Note:_** Another mechanism we've set up to reach the immutability is when we are changing the store. We copy the whole store, not only changing the parts affected to these changes. But we said, this is out of scope. You can learn about these topics in a lot of places in the Internet, for example <a target="_blank" href="https://medium.com/dailyjs/the-state-of-immutability-169d2cd11310">here</a>.
+
+One typical side effect is when launch some action and the app need to make a request to our API. This is a side effect because is out of our scope, the action in our scope is a click or perhaps a new view... but the side effect is a call outside the app which can come with an error or not... this not depends of us.
+
+In order to isolate these side effects we need to listen the actions before they reach the store to have opportunity to react to it before change the state. We are going to do this through the tools *RxJS^ and *ngrx* provide us and we will implement it in our app setting up a new feature to filter the events result to show only the events we've created.
+
+This new feature will need to request our API with a http call (to bring the filtered results) and this will be the functionality we will implement as an effect. We'll do it piecemeal.
+
+> **_Side Note:_** Please considere the functionality as a typical example of side effects, we aren't going to consider if this can be done better by other ways.
 
 
 
