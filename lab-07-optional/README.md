@@ -47,3 +47,13 @@ It's good idea to have some files to store style variables and other details as 
 
 > **_Side Note:_**  Sass is a preprocessing engine for css that add some helpful features. The files with *.scss* suffix follow the a Sass syntax. You can see something more about Sass <a target="_blank" href="https://sass-lang.com/guide">here</a>.
 
+We will have the next style files:
+
+* *src/styles.scss*: Default generic styles from Angular.
+* *src/app/shared/styles/colors.scss*: Color variables.
+* *src/app/shared/styles/variables.scss*: Other variables and mixins.
+* *src/app/shared/styles/material.scss*: Styling about Angular Material Components. We separate this styling because Angular Material has its own way to manage the styling.
+
+All of these files have styling that could affect to several parts of the app, that is, shared styles. Of course we have the scss files for each component which affect only to his own component. You can take a look to some of these files. For example, in *variables.scss* file. You can see a import sentence for fonts (we will talk about fonts later), definitions of some generic variables and mixins.
+
+In *material.scss* file we've set up some styling to the Angular Material Components with the intention that their style is as close as possible to the image we are looking for.
