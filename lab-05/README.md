@@ -225,7 +225,8 @@ export class EventDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private eventService: EventService
+    private eventService: EventService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -536,6 +537,12 @@ const routes: Routes = [
 ...
 import { Router } from "@angular/router";
 
+...
+
+constructor(
+  ...
+  private router: Router
+) {}
 ...
  ngOnInit() {
     const id = this.route.snapshot.params["id"];
