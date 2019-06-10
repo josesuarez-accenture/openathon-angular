@@ -5,7 +5,7 @@
 
   <div class="content">
     <div class="item control">
-      <div class="filter">
+      <div class="filter" *ngIf="isAuthenticated">
         Filter:
         <mat-slide-toggle
           class="slide-mis-eventos"
@@ -15,6 +15,7 @@
           My events
           </mat-slide-toggle>
       </div>
+
 
       <button mat-raised-button color="primary" [routerLink]="['/addEditEvent/', '']">
         Add Event

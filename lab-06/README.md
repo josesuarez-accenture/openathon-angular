@@ -960,6 +960,56 @@ In this point our new architecture is:
 Now, you can try our new functionality to filter the events created by you. Remember to create some new event to take into account the new property modified in our User model and the filter works correctly.
 
 
+### Hide filter
+
+When the user is logged out, the filter ca still be used. To avoid this we can subscribe to the login store slice in order to know when the user is logged out and to be able to hide the filter.
+
+We will also take this opportunity to unsubscribe of our subscriptions.
+
+No the *event-list.component.ts* looks like:
+
+```javascript
+...
+
+export class EventListComponent implements OnInit, OnDestroy {  // <-- NEW
+  events: Event[];
+  selectedEvent: Event;
+  slideMyEvents: boolean;
+  subscriptionLayout: SubscriptionLike;
+  subscriptionLogin: SubscriptionLike; // <-- NEW
+  isAuthenticated: boolean; // <-- NEW
+
+  displayedColumns: string[] = ["Date", "Location", "Title"];
+
+  constructor(
+    private eventService: EventService,
+    private store: Store<any>
+  ) {}
+
+  ngOnInit() {
+    this.getEvents();
+
+    this.subscriptionLayout = this.store.pipe(select('layout')).subscribe(state => {
+      if (state && state.filteredEvents) {
+        this.events = state.filteredEvents;
+        this.selectedEvent = this.events[0];
+      }
+    })
+
+    this.subscriptionLogin = this.store.pipe(select('login')).subscribe(state => { // <-- NEW
+      if (state) {
+        this.isAuthenticated = state.logged;
+      }
+    })
+  }
+
+  ...
+
+  ngOnDestroy() {
+    this.subscriptionLayout.unsubscribe();  // <-- NEW
+    this.subscriptionLogin.unsubscribe();  // <-- NEW
+  }
+```
 
 
 <br/>

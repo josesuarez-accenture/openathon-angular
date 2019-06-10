@@ -5,16 +5,16 @@
     </button>
   </div>
 
-  <div class="filters">
+  <div class="filters" *ngIf="isAuthenticated">
     Filter:
 
     <mat-slide-toggle
-          class="slide-mis-eventos"
-          [checked]="false"
-          [(ngModel)]="slideMyEvents"
-          (change)="myEventsChange()">
-        My events
-      </mat-slide-toggle>
+        class="slide-mis-eventos"
+        [checked]="false"
+        [(ngModel)]="slideMyEvents"
+        (change)="myEventsChange()">
+      My events
+    </mat-slide-toggle>
   </div>
 
   <div id="eventTable">
