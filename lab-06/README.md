@@ -966,7 +966,7 @@ Now, you can try our new functionality to filter the events created by you. Reme
 <br/>
 <br/>
 
-[< Lab 05 - Routing 2 and CRUD](../lab-05)
+[< Lab 05 - Routing 2 and CRUD](../lab-05) | [Lab 07 - Style and Deploy (extra bonus optional for code ninjas) >](../lab-07) 
 
 <p align="center">
     <img src="../boring-theory-1/resources/header.png">

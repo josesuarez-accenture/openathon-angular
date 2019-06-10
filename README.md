@@ -80,6 +80,7 @@ This edition of the Openathon is divided in the following theory and laboratorie
 | [Lab 4](/lab-04)                | Services             |
 | [Lab 5](/lab-05)             | Routing 2 and CRUD                            |
 | [Lab 6](/lab-06)             | Central State management                            |
+| [Lab 7](/lab-07)             | Style and Deploy (extra bonus optional for code ninjas)                            |
 | Proof of Concept           |                           |
 | Openathon       | Openathon final lab                        |
 
