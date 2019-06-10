@@ -27,7 +27,7 @@ For example, thinking in our app if we would like to create breadcrumbs (see sid
 
 To do this Angular has several options. We can pass data from parents to children, we can make a Service to inject data where we want... All of these solutions are good, but they solve particular situations or perhaps a broader situation with more work. At the end it is about managing the state and when a part of the app change... other parts have to know these changes.
 
-I'm sure that you've realized how many situations as this can happen in an app: to do click in one button and react to this in other part, move the cursor and something happen in a sidebar, to do click in a link and change de style of the view, todo click and show data in the right side, go back and show the same data from the API that before... we present you... our friend, the *central state* of the app, known in some context as Redux an in the Angular world as NgRx/Store.
+I'm sure that you've realized how many situations as this can happen in an app: to do click in one button and react to this in other part, move the cursor and something happen in a sidebar, to do click in a link and change de style of the view, todo click and show data in the right side, go back and show the same data from the API that before... we present you... our friend, the *Central State* of the app, known in some context as Redux and in the Angular world as NgRx/Store.
 
 Our friend *central state* will know and manage all state we want to manage and are important for us.
 
@@ -126,7 +126,7 @@ As we already advanced you, this interface forces us to create a property named 
 
 We export the constant and the class since we will need it in the *Reducer* as you will see later.
 
-The third export it's a type alias from typescript (basically it's used to give another name to a type) and we will need in the *Reducer* too to can discriminate the action type (in a *switch* statement).
+The third export it's a type alias from typescript (basically it's used to give another name to a type) and we will need in the *Reducer* too to be able to discriminate the action type (in a *switch* statement).
 
 > **_Side Note:_** If you want to understand the Typescript's discriminate unions you can read <a target="_blank" href="https://basarat.gitbooks.io/typescript/docs/types/discriminated-unions.html">this</a>.
 
@@ -163,7 +163,7 @@ First, we import all exported members from *login.actions.ts*, after that, we de
 
 > **_Side Note:_** Slice is  the name to refer to a portion of state. Remember that the state is one and unique, we only split it to make it more manageable.
 
-Since we have to set up a initial state to the store, we define a constant (*State* type) with a initial value (*false*).
+Since we have to set up an initial state to the store, we define a constant (*State* type) with a initial value (*false*).
 
 After that we create the reducer function which will make the work to change the state depending of the action. We manage this with a *switch* statement as we said before.
 
@@ -349,7 +349,7 @@ export class UserService {
 
   private setUser() {
     this.isAuthenticated = localStorage.getItem("user") ? true : false;
-    this.isAuthenticated ? this.store.dispatch(new login.Logged(true)) : this.store.dispatch(new login.Logged(false)) // <-- NEW
+    this.isAuthenticated ? this.store.dispatch(new login.Logged(true)) : this.store.dispatch(new login.Logged(false)); // <-- NEW
   }
 
   // Error handling
@@ -382,7 +382,9 @@ We dispatch de action with *true/false* payload depending of the authentication 
 
 Now is the moment to take a look at the login.redux.ts. This action dispatched is listened from this file, our reducer, and you can see in it that we check the type action and if it's a *login.LOGGED* type we change the state with the  new *logged* property with a value equal to the payload from the action.
 
-But where will this new state be listened from? The response is from where we want the action to change our app. In our app, from the menu tool bar since it's the place where our app reacts to the login action changing the layout (login/logout menu link). The *toolbar.component.ts* will be:
+But where will this new state be listened from? The response is from where we want the action to change our app. In our app, from the menu tool bar since it's the place where our app reacts to the login action changing the layout (login/logout menu link). 
+
+Refactor *toolbar.component.ts* file as following:
 
 
 ```javascript
@@ -599,7 +601,7 @@ import "hammerjs";
 export class SharedModule {}
 ```
 
-Now we're going to create the new service method to get the filtered data in our *evet.service.ts* (insert this new method). 
+Now we're going to create the new service method to get the filtered data in our *event.service.ts* (insert this new method). 
 
 ```javascript
 ...
@@ -618,7 +620,7 @@ getFilteredEvents(filter): Observable<any> {
 ...
 ```
 
-We add our new filter in the *get* url, jus after *events* part. This filter is a *filter* variable coming from the call and we will see his aspect later.
+We add our new filter in the *get* url, just after *events* part. This filter is a *filter* variable coming from the call and we will see his aspect later.
 
 > **_Side Note:_** You can see how the filters are formed in json-server library in <a target="_blank" href="https://github.com/typicode/json-server#filter">this link</a>.
 
@@ -718,7 +720,7 @@ export function reducer(state: State = initialState, action: layout.Actions): St
 
 Now our reducer has to manage these three situations when those actions are launched. 
 
-Our new state slice have three properties too (this is only a coincidence).
+Our new state slice has three properties too (this is only a coincidence).
 
 * *filteredEvents*: Will contain the events filtered (an array of *Event* model).
 * *loading*: It's a boolean that will tell us if the request is in process or not. This is not used in our app, but you can see their utility if we would want to inform the user of the loading process.
@@ -730,8 +732,13 @@ If the action is of the second type *GET_FILTERED_EVENTS_SUCCESS*, our request h
 
 If the third type GET_FILTERED_EVENTS_ERROR is reached some error has happened, so we delete the events (empty array), the loading is ended and the *payload* property has the error data which we store it in our *error* state property. This error could be shown to the user if the observer subscripted to this action manage this situation.
 
-We'll see the big picture with the next file:
+Install the ngrx/effects: 
 
+```bash
+npm install @ngrx/effects --save
+```
+
+We'll see the big picture with the next file:
 
 ```javascript
 // layout.effects.ts
@@ -869,7 +876,7 @@ import { select, Store } from '@ngrx/store'; // <-- NEW
 import { EventService } from "../../core/event.service";
 import * as layout from '../../store/layout/layout.actions'; // <-- NEW
 import { User } from "../../models/user"; // <-- NEW
-import { SubscriptionLike } from 'rxjs' // <-- NEW
+import { SubscriptionLike } from 'rxjs'; // <-- NEW
 
 @Component({
   selector: "oevents-event-list",
@@ -879,7 +886,7 @@ import { SubscriptionLike } from 'rxjs' // <-- NEW
 export class EventListComponent implements OnInit {
   events: Event[];
   selectedEvent: Event;
-  slideMyEvents: boolean;
+  slideMyEvents: boolean;   // <-- NEW
   subscriptionLayout
   : SubscriptionLike;
 
