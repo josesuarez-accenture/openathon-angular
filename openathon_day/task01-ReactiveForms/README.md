@@ -63,23 +63,23 @@ this.addContact = this.fb.group({
 // Create an object, with the form properties with requirements and their error messages.
 
 validationMessages = {
-    'name': { 
-        'required' : 'The field is required'
+    name: { 
+        required : 'The field is required'
         },
-    'surname': {
-        'required' : 'The field is required',
-        'minlength' : "min length is 2 characters"
+    surname: {
+        required : 'The field is required',
+        minlength : 'The min length is 2 characters'
     },
-    'phone' : {
-        'required' : 'The field is required'
+    phone : {
+        required : 'The field is required'
     }
 }
 
 // Create an object with the required form properties and set them to be an empty string. We will assign the value to be equal to the error messages if any.
 formErrors = {
-    'name': '',
-    'surname': '', 
-    'phone' : ''
+    name: '',
+    surname: '', 
+    phone : ''
 }
 
 ```
@@ -115,7 +115,7 @@ onValueChanged(data?: any) {
         this.formErrors[field] = ''; // clears previous error messages if any
         const control = form.get(field);
         if (control && control.dirty && !control.valid) { //we are using the dirty property here but you could use any other. 
-        const messages = this.validationMessages[field]
+        const messages = this.validationMessages[field];
         for (const key in control.errors) {
             if (control.errors.hasOwnProperty(key)) {
             this.formErrors[field] += messages[key];
