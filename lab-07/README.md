@@ -485,7 +485,7 @@ Now you can push the app to your server:
 git push aws-production +master:refs/heads/master
 ```
 
-Note that you only have to use “+master:refs/heads/master" for 1st push. To push to remote repo in future (or using normally your visual git tool to push it): 
+Note that you only have to use “+master:refs/heads/master" for 1st push. To push to remote repo in future (or using normally your visual git tool to push it):
 
 ```bash
 git push aws-production master
@@ -493,9 +493,9 @@ git push aws-production master
 
 > **_Side Note:_**  If you haven't found yourself in trouble so far, you're almost all done. If you have had a problem maybe in some step your system has been configured differently and you need to change something. The process would be the same but adjusting the necessary changes to your particular system and configuration. We can only show you the way for this Openathon.
 
-### Deploying
+### Last set ups
 
-Ahora debemos tener nuestra aplicación en nuestro servidor (*/var/www/html/oef*). Pero necesitamos algunos ajustes finales (sí, esto es un largo camino, lo sabemos, pero este es nuestro trabajo, ¿no es así? ;) ).
+Now we must have our application on our server (*/var/www/html/oef*). But we need some final adjustments (yes, this is a long way, we know, but this is our job, isn't it? ;) ).
 
 Go back to the AWS console and go to the EC2 dashboard. Click in *Security Groups* in the menu left side. Click to the row in the table wtih "launch-wizard-1" as value in the "Group Name" column.
 
@@ -533,3 +533,10 @@ Now, pm2 has started our API server. We can go to our url *http://open-events.si
 <p align="center">
     <img src="./resources/oef.png" max-width="900">
 </p>
+
+
+<br/>
+<br/>
+<br/>
+
+[< Lab 06 - Central State management](../lab-06)
