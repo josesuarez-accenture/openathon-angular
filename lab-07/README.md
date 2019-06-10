@@ -528,7 +528,7 @@ cd /var/www/html/oef
 pm2 start server.js --name open-events-api
 ```
 
-Now, pm2 has started our API server. We can go to our url *http://open-events.site* an see our app on-line with the events form our *db.json*.
+Now, pm2 has started our API server. We can go to our url <a href="http://open-events.site" target="_blank"></a>http://open-events.site</a> an see our app on-line with the events form our *db.json*.
 
 <p align="center">
     <img src="./resources/oef.png" max-width="900">
