@@ -1,3 +1,8 @@
+<p align="center">
+    <img src="../../boring-theory-1/resources/header.png">
+</p>
+
+
 # Task 01 - Reactive Forms
 
 ## Introduction
@@ -138,8 +143,9 @@ Now the last step is to simplify the HTML code to display that errors. But this 
 ```
 
 
-
-
 ## Beyond The Scope
 By yourself implement the requirements validation for the login form as you consider. 
 
+<p align="center">
+    <img src="../../boring-theory-1/resources/header.png">
+</p>

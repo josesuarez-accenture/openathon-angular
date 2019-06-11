@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../../boring-theory-1/resources/header.png">
+</p>
+
 # Task 02 - Animations
 
 Animations are a main topic of the UX . Nowadays they aren't a superfluous feature and they are used to guide the user through our app, enhance the user experience, call attention to focus in some feature...
@@ -178,3 +182,7 @@ The animation will start on the view creation from a hidden state and the moveme
 In the *app* folder of the *lab-07* laboratory you have the start point of the task.
 
 As we have to animate several components using similar code (the same animation), a extra point is to follow the DRY Principle (do not repeat yourself)  an to reduce the repetition of code somehow.
+
+<p align="center">
+    <img src="../../boring-theory-1/resources/header.png">
+</p>
