@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
+
 # Lab 07 - Style and Deploy (extra bonus optional for code ninjas)
 
 Something about Frontend can't avoid to talk about style, desing, UX... This is an important and extensive aspect and we aren't going to make a lab with all details about it. We only show you the final result of our app and will explain some main features.
@@ -540,3 +544,7 @@ Now, pm2 has started our API server. We can go to our url <a href="http://open-e
 <br/>
 
 [< Lab 06 - Central State management](../lab-06)
+
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>

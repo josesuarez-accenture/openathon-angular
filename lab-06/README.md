@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="../boring-theory-1/resources/header.png">
+</p>
+
 # Lab 06 - Central State management
 
 This lab is about the app state. It's a more advanced concept that we've already seen so far, but it's important to know it since nowadays it's the way that the enterprise-ready applications are made (either using NgRx, Redux, Flux or others).
