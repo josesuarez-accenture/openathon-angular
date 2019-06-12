@@ -362,6 +362,7 @@ npm install json-server -g
 </p>
 
 <br/>
+
 > **_Side Note:_** 
 By default, the server will start at port number 3000. If you wish to change the port number, you can do it with the '-p' parameter.
 ```sh
