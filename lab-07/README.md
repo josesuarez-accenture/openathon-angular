@@ -85,7 +85,7 @@ $acn-font: "Graphik", "Helvetica Neue","Verdana", "Helvetica", "Arial", "sans-se
 And use it in  *style.scss*:
 
 ```css
-@import './app/shared/estilos/variables';
+@import './app/shared/styles/variables';
 ...
 font-family: $acn-font;
 ...
@@ -208,8 +208,6 @@ With this, our app in production will request our events to our EC2 server since
 
 The second thing we have to do in our app is modularize our API server json-server. This is necessary because now we have to run it manually each time we start the app but in the server we need it running forever automatically. To do it, we'll use in the server a superb  process manager: <a target="_blank" href="http://pm2.keymetrics.io/">pm2</a>.
 
-The second thing we have to do is modularize our API server json-server. This is necessary because now we have to run it manually each time we start the app but in the server we need it running forever automatically. To do it, we'll use in the server a superb  process manager: <a target>pm2</a>. 
-
 pm2 is a invaluable tool to manage services in production but only run Node services. To feed pm2 with our server we need to to a *server.js* file which run our json-server like this:
 
 ```javascript
@@ -229,7 +227,7 @@ With this, we only have to do "pm2 start server.js" and pm2 will take care of ev
 
 ### Build our app
 
-Now we have the app ready to the build. This is the most easy step because Angular take care of manage webpack and the whole process of split our files, minimify, syntaxis check... To do it we run the next command:
+Now we have the app ready to the build. This is the most easy step because Angular take care of manage webpack and the whole process of split our files, minify, syntaxis check... To do it we run the next command:
 
 ```bash
 ng build --prod
