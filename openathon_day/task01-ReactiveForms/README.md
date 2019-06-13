@@ -1,3 +1,8 @@
+<p align="center">
+    <img src="../../boring-theory-1/resources/header.png">
+</p>
+
+
 # Task 01 - Reactive Forms
 
 ## Introduction
@@ -55,9 +60,9 @@ In this example we have the *Add Contact* form that has three fields: name, surn
 ...
 // Add Contact form 
 this.addContact = this.fb.group({
-        name: [this.event.title, Validators.required,
-        surname: [this.event.location, [Validators.required, Validators.minLength(2)]],
-        phone: [this.event.description, Validators.required,],
+        name: [this.event.title, Validators.required],
+        surname: [this.event.location, Validators.required],
+        phone: [this.event.description, Validators.required]
     });
 
 // Create an object, with the form properties with requirements and their error messages.
@@ -67,8 +72,7 @@ validationMessages = {
         required : 'The field is required'
         },
     surname: {
-        required : 'The field is required',
-        minlength : 'The min length is 2 characters'
+        required : 'The field is required'
     },
     phone : {
         required : 'The field is required'
@@ -91,9 +95,9 @@ We want to be aware of any change in the *addContact* form. For that reason, aft
 createForm(){
 
 this.addContact = this.fb.group({
-        name: [this.event.title, Validators.required,
-        surname: [this.event.location, [Validators.required, Validators.minLength(2)]],
-        phone: [this.event.description],
+        name: [this.event.title, Validators.required],
+        surname: [this.event.location, Validators.required],
+        phone: [this.event.description, Validators.required]
     });
 
 this.addContact.valueChanges.subscribe(data => this.onValueChanged(data));
@@ -139,8 +143,9 @@ Now the last step is to simplify the HTML code to display that errors. But this 
 ```
 
 
-
-
 ## Beyond The Scope
 By yourself implement the requirements validation for the login form as you consider. 
 
+<p align="center">
+    <img src="../../boring-theory-1/resources/header.png">
+</p>
