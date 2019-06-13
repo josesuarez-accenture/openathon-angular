@@ -21,11 +21,11 @@ Let's focus to implement the reactive forms in the add-edit-event form.
 
 2 - As we have already created the addEditForm (as a FormGroup type) in the add-edit-event.component.ts, we can make some changes now in the add-edit-event.componet.html. First, we need to tell the form to not validate the fields with the *novalidate* attribute. Also we can remove the *#fform="ngForm"* attribute. In addition, for each input we have the attribute *formControlName* which is linked with the form property defined in the controller. Remove the *required* attribute for the inputs (if any) in add-edit-event.component.html, as we are going to manage this in a different way.
 
-3 - Going back to our add-edit-event.component.ts controller. Do you remember that we have the *createForm()* method?. In this method we were creating the form and adding default values to the properties (regarding if we were editing an event or adding a new one). At this point, we are going to add the form validations. Follow this <a target="_blank" href="https://angular.io/guide/reactive-forms#simple-form-validation">simple form validation example </a> and implement the following requirementes for the *add-edit-event form* .
+3 - Going back to our add-edit-event.component.ts controller. Do you remember that we have the *createForm()* method?. In this method, we were creating the form and adding default values to the properties (regarding if we were editing an event or adding a new one). At this point, we are going to add the form validations. Follow this <a target="_blank" href="https://angular.io/guide/reactive-forms#simple-form-validation">simple form validation example </a> and implement the following requirements for the *add-edit-event form* .
 
     Requirements: 
     * Title must be required.
-    * Location must be required; with a minimum of 2 characters and a maximum  of 25 characters.
+    * Location must be required; with a minimum of 2 characters and a maximum of 25 characters.
     * Date must be required.
     * Description must be required; with a minimum of 10 characters and a maximum of 400 characters.
 
@@ -47,13 +47,13 @@ Make sure the form is not submitted with errors. To achieve this you can use the
 
 ## Managing Validations Messages
 
-At this stage, you should be able to see the errors if any but you will have noticed how quick our HTML code is getting messy with all these errors messages. For a simple form this should be fine, but for complex ones that could be an issue. Lucky for us there are another ways to manage this from our controller.
+At this stage, you should be able to see the errors if any but you will have noticed how quick our HTML code is getting messy with all these error messages. For a simple form this should be fine, but for complex ones that could be an issue. Lucky for us there are other ways to manage this from our controller.
 
 In our controller what we need to do is to manage the errors from the form and what message (if any) we want to show. 
 
 Use the following example to implement this in add-edit-event form. 
 
-In this example we have the *Add Contact* form that has three fields: name, surname, and phone with some requirements. In its controller we manage the possible form errors as it follows;
+In this example, we have the *Add Contact* form that has three fields: name, surname, and phone with some requirements. In its controller we manage the possible form errors as it follows;
 
 ```javascript
 // Add-Contact.controller.ts
@@ -108,7 +108,7 @@ this.addContact.valueChanges.subscribe(data => this.onValueChanged(data));
 ```
 
 
-*onValueChanged* method is going to check if there is any error in the form properties regarding their values. If there is, then it will assing the error message that we have defined in the *validationMessages* object into the correspondent formErrors property.
+*onValueChanged* method is going to check if there is an error in the form properties regarding their values. If there is, then it will assign the error message that we have defined in the *validationMessages* object into the correspondent formErrors property.
 
 ```javascript
 onValueChanged(data?: any) {
