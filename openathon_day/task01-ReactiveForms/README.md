@@ -19,7 +19,7 @@ Let's focus to implement the reactive forms in the add-edit-event form.
 
 1 - Import the *Reactive Form Module* into the app.module.ts (If need it)
 
-2 - As we have already created the addEditForm (as a FormGroup type) in the add-edit-event.component.ts, we can make some changes now in the add-edit-event.componet.html. First, we need to tell the form to not validate the fields with the *novalidate* attribute. Also we can remove the *#fform="ngForm"* attribute. In addition, for each input we have the attribute *formControlName* which is linked with the form property defined in the controller. Remove the *required* attribute for the inputs (if any) in add-edit-event.component.html, as we are going to manage this in a different way.
+2 - As we have already created the addEditForm (as a FormGroup type) in the add-edit-event.component.ts, we can make some changes now in the add-edit-event.component.html. First, we need to tell the form to not validate the fields with the *novalidate* attribute. Also we can remove the *#fform="ngForm"* attribute. In addition, for each input we have the attribute *formControlName* which is linked with the form property defined in the controller. Remove the *required* attribute for the inputs (if any) in add-edit-event.component.html, as we are going to manage this in a different way.
 
 3 - Going back to our add-edit-event.component.ts controller. Do you remember that we have the *createForm()* method?. In this method, we were creating the form and adding default values to the properties (regarding if we were editing an event or adding a new one). At this point, we are going to add the form validations. Follow this <a target="_blank" href="https://angular.io/guide/reactive-forms#simple-form-validation">simple form validation example </a> and implement the following requirements for the *add-edit-event form* .
 
@@ -32,10 +32,10 @@ Let's focus to implement the reactive forms in the add-edit-event form.
 
 4 - After implementing the validation Requirements in the controller, edit the add-edit-event.component.html to show the errors to the user if needed. As before, follow the <a target="_blank" href="https://angular.io/guide/reactive-forms#simple-form-validation">simple form validation example </a> to complete this task. 
 
-For displaying the errors in the hmtl use the <a target="_blank" href="https://material.angular.io/components/form-field/overview#error-messages">mat-error</a> component from Angular Material.
+For displaying the errors in the HTML use the <a target="_blank" href="https://material.angular.io/components/form-field/overview#error-messages">mat-error</a> component from Angular Material.
 
 In order to access to the form property you can use the following: 
-*form_name.get('porperty_name').hasError('error_type')* for instance: 
+*form_name.get('property_name').hasError('error_type')* for instance: 
 ```javascript 
 addEditForm.get('phone_number').hasError('required') &&  addEditForm.get('phone_number').touched
 ```
@@ -138,7 +138,7 @@ Now the last step is to simplify the HTML code to display that errors. But this 
 ```html
     <mat-form-field>
     <input matInput placeholder="Surname" type="text" formControlName="surname" />
-    <mat-error *ngIf="formErrors.surname">{{eventFormErrors.surname}} </mat-error>
+    <mat-error *ngIf="formErrors.surname">{{formErrors.surname}} </mat-error>
     </mat-form-field>
 ```
 
