@@ -214,13 +214,7 @@ With this, our app in production will request our events to our EC2 server since
 
 The second thing we have to do in our app is modularized our API server json-server. This is necessary because now we have to run it manually each time we start the app but in the server, we need it running forever automatically. To do it, we'll use in the server a superb  process manager: <a target="_blank" href="http://pm2.keymetrics.io/">pm2</a>.
 
-<<<<<<< HEAD
 pm2 is a invaluable tool to manage services in production but only run Node services. To feed pm2 with our server we need to to a *server.js* file which run our json-server like this:
-=======
-The second thing we have to do is modularize our API server json-server. This is necessary because now we have to run it manually each time we start the app but in the server we need it running forever automatically. To do it, we'll use in the server a superb  process manager: <a target>pm2</a>. 
-
-pm2 is an important tool to manage services in production but only run Node services. To feed pm2 with our server we need to do a *server.js* file which runs our json-server like this:
->>>>>>> 2624ea4d040a0c91a2e7c0d88d40e4da72c10415
 
 ```javascript
 const jsonServer = require('json-server')
@@ -239,11 +233,7 @@ With this, we only have to do "pm2 start server.js" and pm2 will take care of ev
 
 ### Build our app
 
-<<<<<<< HEAD
 Now we have the app ready to the build. This is the most easy step because Angular take care of manage webpack and the whole process of split our files, minify, syntaxis check... To do it we run the next command:
-=======
-Now we have the app ready for the build. This is the easiest step because Angular takes care of manage webpack and the whole process of split our files, minimify, syntaxis check... To do it we run the next command:
->>>>>>> 2624ea4d040a0c91a2e7c0d88d40e4da72c10415
 
 ```bash
 ng build --prod
